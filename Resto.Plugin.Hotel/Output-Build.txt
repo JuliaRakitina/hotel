@@ -1,0 +1,4 @@
+﻿1>------ Build started: Project: Resto.Plugin.Hotel, Configuration: Release Any CPU ------
+1>C:\Users\Julia\Desktop\5.0\SDK_4.4\Resto.Plugin.Hotel.Sources\Resto.Plugin.Hotel\HotelPlugin.cs(28,32,28,46): warning CS0612: 'IPluginAdapter' is obsolete
+1>  Resto.Plugin.Hotel -> C:\Users\Julia\Desktop\5.0\SDK_4.4\Resto.Plugin.Hotel.Sources\Resto.Plugin.Hotel\bin\Release\Resto.Plugin.Hotel.dll
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========

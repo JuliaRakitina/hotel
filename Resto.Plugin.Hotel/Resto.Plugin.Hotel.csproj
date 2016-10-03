@@ -74,6 +74,11 @@
     </Compile>
     <Compile Include="HotelPluginController.cs" />
     <Compile Include="HotelPluginTabPage.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -95,9 +100,21 @@
     <EmbeddedResource Include="HotelPluginUserControl.resx">
       <DependentUpon>HotelPluginUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="dirinfo.txt" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\info %281%29.png" />
+    <None Include="Resources\edit %281%29.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\edit_16x16.bmp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

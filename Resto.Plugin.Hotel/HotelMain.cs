@@ -42,22 +42,46 @@ namespace Resto.Plugin.Hotel
         /// <param name="e"></param>
         private void dtvMain_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            //if (e.RowIndex < 0)
-            //    return;
+            if (e.RowIndex < 0)
+                return;
 
-            ////I supposed your button column is at index 0
-            //if (e.ColumnIndex == 0)
-            //{
-            //    e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+            if (e.ColumnIndex == 0)//this is Info button
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var w = 16;
+                var h = 16;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+                Image img = (Bitmap)(Properties.Resources.ResourceManager.GetObject("info_24x24"));
+                e.Graphics.DrawImage(img, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
 
-            //    var w = Properties.Resources.SomeImage.Width;
-            //    var h = Properties.Resources.SomeImage.Height;
-            //    var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-            //    var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
 
-            //    e.Graphics.DrawImage(Properties.Resources.SomeImage, new Rectangle(x, y, w, h));
-            //    e.Handled = true;
-            //}
+            if (e.ColumnIndex==1)//this is Edit button
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var w = 16;
+                var h = 16;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+                Image img = (Bitmap)(Properties.Resources.ResourceManager.GetObject("edit_24x24"));
+                e.Graphics.DrawImage(img, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+
+            if (e.ColumnIndex == 2)//this is Cancel button
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var w = 16;
+                var h = 16;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+                Image img = (Bitmap)(Properties.Resources.ResourceManager.GetObject("cancel_24x24"));
+                e.Graphics.DrawImage(img, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+
         }
     }
 }

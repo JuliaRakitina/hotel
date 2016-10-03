@@ -30,17 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dtvMain = new System.Windows.Forms.DataGridView();
-            this.hotelMainPanel = new System.Windows.Forms.Panel();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.stsStrpLbl1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblTest = new System.Windows.Forms.Label();
-            this.cmbRoomStatuses = new System.Windows.Forms.ComboBox();
-            this.hotelRoomStatusesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.restoDataSet = new Resto.Plugin.Hotel.RestoDataSet();
-            this.btnCreate = new System.Windows.Forms.Button();
-            this.hotelRoomStatusesTableAdapter = new Resto.Plugin.Hotel.RestoDataSetTableAdapters.HotelRoomStatusesTableAdapter();
-            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.info_reservation = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.editReservation = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cancel_reservation = new System.Windows.Forms.DataGridViewButtonColumn();
             this.rsrv_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guestId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_from = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,15 +40,23 @@
             this.room_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.room_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.info = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cancel = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.hotelMainPanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTest = new System.Windows.Forms.Label();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.cmbRoomStatuses = new System.Windows.Forms.ComboBox();
+            this.hotelRoomStatusesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.restoDataSet = new Resto.Plugin.Hotel.RestoDataSet();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.stsStrpLbl1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.hotelRoomStatusesTableAdapter = new Resto.Plugin.Hotel.RestoDataSetTableAdapters.HotelRoomStatusesTableAdapter();
+            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtvMain)).BeginInit();
             this.hotelMainPanel.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hotelRoomStatusesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.restoDataSet)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtvMain
@@ -65,16 +65,16 @@
             this.dtvMain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtvMain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.info_reservation,
+            this.editReservation,
+            this.cancel_reservation,
             this.rsrv_id,
             this.guestId,
             this.date_from,
             this.date_to,
             this.room_type,
             this.room_number,
-            this.status,
-            this.edit,
-            this.info,
-            this.cancel});
+            this.status});
             this.dtvMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtvMain.Location = new System.Drawing.Point(0, 118);
             this.dtvMain.Name = "dtvMain";
@@ -82,6 +82,75 @@
             this.dtvMain.Size = new System.Drawing.Size(1606, 816);
             this.dtvMain.TabIndex = 0;
             this.dtvMain.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dtvMain_CellPainting);
+            // 
+            // info_reservation
+            // 
+            this.info_reservation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.info_reservation.FillWeight = 99.20385F;
+            this.info_reservation.HeaderText = "";
+            this.info_reservation.Name = "info_reservation";
+            this.info_reservation.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.info_reservation.Width = 40;
+            // 
+            // editReservation
+            // 
+            this.editReservation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.editReservation.FillWeight = 101.7849F;
+            this.editReservation.HeaderText = "";
+            this.editReservation.Name = "editReservation";
+            this.editReservation.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.editReservation.Width = 40;
+            // 
+            // cancel_reservation
+            // 
+            this.cancel_reservation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.cancel_reservation.FillWeight = 99.07878F;
+            this.cancel_reservation.HeaderText = "";
+            this.cancel_reservation.Name = "cancel_reservation";
+            this.cancel_reservation.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cancel_reservation.Width = 40;
+            // 
+            // rsrv_id
+            // 
+            this.rsrv_id.FillWeight = 99.99036F;
+            this.rsrv_id.HeaderText = "Reservation";
+            this.rsrv_id.Name = "rsrv_id";
+            // 
+            // guestId
+            // 
+            this.guestId.FillWeight = 99.99036F;
+            this.guestId.HeaderText = "Guest";
+            this.guestId.Name = "guestId";
+            // 
+            // date_from
+            // 
+            this.date_from.FillWeight = 99.99036F;
+            this.date_from.HeaderText = "From";
+            this.date_from.Name = "date_from";
+            // 
+            // date_to
+            // 
+            this.date_to.FillWeight = 99.99036F;
+            this.date_to.HeaderText = "To";
+            this.date_to.Name = "date_to";
+            // 
+            // room_type
+            // 
+            this.room_type.FillWeight = 99.99036F;
+            this.room_type.HeaderText = "Room Type";
+            this.room_type.Name = "room_type";
+            // 
+            // room_number
+            // 
+            this.room_number.FillWeight = 99.99036F;
+            this.room_number.HeaderText = "Room";
+            this.room_number.Name = "room_number";
+            // 
+            // status
+            // 
+            this.status.FillWeight = 99.99036F;
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
             // 
             // hotelMainPanel
             // 
@@ -94,22 +163,16 @@
             this.hotelMainPanel.Size = new System.Drawing.Size(1606, 971);
             this.hotelMainPanel.TabIndex = 1;
             // 
-            // statusStrip1
+            // panel1
             // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.stsStrpLbl1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 934);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1606, 37);
-            this.statusStrip1.TabIndex = 5;
-            this.statusStrip1.Text = "stsStrp";
-            // 
-            // stsStrpLbl1
-            // 
-            this.stsStrpLbl1.Name = "stsStrpLbl1";
-            this.stsStrpLbl1.Size = new System.Drawing.Size(159, 32);
-            this.stsStrpLbl1.Text = "Current user: ";
+            this.panel1.Controls.Add(this.lblTest);
+            this.panel1.Controls.Add(this.btnCreate);
+            this.panel1.Controls.Add(this.cmbRoomStatuses);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1606, 118);
+            this.panel1.TabIndex = 6;
             // 
             // lblTest
             // 
@@ -119,6 +182,19 @@
             this.lblTest.Size = new System.Drawing.Size(47, 25);
             this.lblTest.TabIndex = 4;
             this.lblTest.Text = "test";
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.Image = global::Resto.Plugin.Hotel.Properties.Resources.plus_32x32;
+            this.btnCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCreate.Location = new System.Drawing.Point(17, 11);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(249, 75);
+            this.btnCreate.TabIndex = 2;
+            this.btnCreate.Text = "New Reservation";
+            this.btnCreate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // cmbRoomStatuses
             // 
@@ -141,15 +217,22 @@
             this.restoDataSet.DataSetName = "RestoDataSet";
             this.restoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // btnCreate
+            // statusStrip1
             // 
-            this.btnCreate.Location = new System.Drawing.Point(107, 32);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(341, 41);
-            this.btnCreate.TabIndex = 2;
-            this.btnCreate.Text = "Create";
-            this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stsStrpLbl1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 934);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1606, 37);
+            this.statusStrip1.TabIndex = 5;
+            this.statusStrip1.Text = "stsStrp";
+            // 
+            // stsStrpLbl1
+            // 
+            this.stsStrpLbl1.Name = "stsStrpLbl1";
+            this.stsStrpLbl1.Size = new System.Drawing.Size(159, 32);
+            this.stsStrpLbl1.Text = "Current user: ";
             // 
             // hotelRoomStatusesTableAdapter
             // 
@@ -159,67 +242,6 @@
             // 
             this.fillByToolStripButton.Name = "fillByToolStripButton";
             this.fillByToolStripButton.Size = new System.Drawing.Size(23, 23);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lblTest);
-            this.panel1.Controls.Add(this.btnCreate);
-            this.panel1.Controls.Add(this.cmbRoomStatuses);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1606, 118);
-            this.panel1.TabIndex = 6;
-            // 
-            // rsrv_id
-            // 
-            this.rsrv_id.HeaderText = "Reservation";
-            this.rsrv_id.Name = "rsrv_id";
-            // 
-            // guestId
-            // 
-            this.guestId.HeaderText = "Guest";
-            this.guestId.Name = "guestId";
-            // 
-            // date_from
-            // 
-            this.date_from.HeaderText = "From";
-            this.date_from.Name = "date_from";
-            // 
-            // date_to
-            // 
-            this.date_to.HeaderText = "To";
-            this.date_to.Name = "date_to";
-            // 
-            // room_type
-            // 
-            this.room_type.HeaderText = "Room Type";
-            this.room_type.Name = "room_type";
-            // 
-            // room_number
-            // 
-            this.room_number.HeaderText = "Room";
-            this.room_number.Name = "room_number";
-            // 
-            // status
-            // 
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
-            // 
-            // edit
-            // 
-            this.edit.HeaderText = "Edit";
-            this.edit.Name = "edit";
-            // 
-            // info
-            // 
-            this.info.HeaderText = "Info";
-            this.info.Name = "info";
-            // 
-            // cancel
-            // 
-            this.cancel.HeaderText = "Cancel";
-            this.cancel.Name = "cancel";
             // 
             // HotelMain
             // 
@@ -231,12 +253,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtvMain)).EndInit();
             this.hotelMainPanel.ResumeLayout(false);
             this.hotelMainPanel.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelRoomStatusesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.restoDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelRoomStatusesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.restoDataSet)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -255,6 +277,9 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel stsStrpLbl1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewButtonColumn info_reservation;
+        private System.Windows.Forms.DataGridViewButtonColumn editReservation;
+        private System.Windows.Forms.DataGridViewButtonColumn cancel_reservation;
         private System.Windows.Forms.DataGridViewTextBoxColumn rsrv_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn guestId;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_from;
@@ -262,8 +287,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn room_type;
         private System.Windows.Forms.DataGridViewTextBoxColumn room_number;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
-        private System.Windows.Forms.DataGridViewButtonColumn edit;
-        private System.Windows.Forms.DataGridViewButtonColumn info;
-        private System.Windows.Forms.DataGridViewButtonColumn cancel;
     }
 }
