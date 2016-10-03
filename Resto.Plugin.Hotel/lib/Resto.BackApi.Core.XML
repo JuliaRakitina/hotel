@@ -1,0 +1,509 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Resto.BackApi.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Resto.BackApi.Core.BackgroundTask.Extensions.BackgroundTaskExtension">
+            <summary>
+            Расширение для старта фоновой задачи с блокировкой контекстного элемента управления.
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.BackgroundTask.Extensions.BackgroundTaskExtension.StartBackgroundTask(System.Windows.Forms.Control,System.Action{Resto.BackApi.Core.BackgroundTask.IBackgroundTaskContext})">
+            <summary>
+            Запускает новую фоновую задачу с отображением UI ожидания и блокировкой контекстного контрола.
+            </summary>
+            <param name="control">Контекстный элемент управления (будет заблокирован на время выполнения фоновой задачи).</param>
+            <param name="action">Действие фоновой задачи.</param>
+            <returns>Созданную и запущенную на выполнение задачу.</returns>
+        </member>
+        <member name="P:Resto.BackApi.Core.BackgroundTask.Extensions.BackgroundTaskExtension.StartBackgroundTaskFunc">
+            <summary>
+            Действие для старта фоновой задачи.
+            </summary>
+        </member>
+        <member name="T:Resto.BackApi.Core.BackgroundTask.IBackgroundCallContext">
+            <summary>
+            Интерфейс контекста для фоновых вызовов сервисных методов.
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.BackgroundTask.IBackgroundCallContext.ShowCancellationMessage">
+            <summary>
+            Команда отобразить сообщение об отмене операции
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.BackgroundTask.IBackgroundCallContext.ShowErrorMessage(System.Exception)">
+            <summary>
+            Команда сообщить сообщение об ошибке
+            </summary>
+            <param name="exc">Исключение</param>
+        </member>
+        <member name="M:Resto.BackApi.Core.BackgroundTask.IBackgroundCallContext.GetCancelToken">
+            <summary>
+            Возвращает новую копию токена отмены операции.
+            </summary>
+            <returns>Копия токена отмены (<see cref="T:System.Threading.CancellationToken"/> - структура).</returns>
+        </member>
+        <member name="P:Resto.BackApi.Core.BackgroundTask.IBackgroundCallContext.TabPageId">
+            <summary>
+            Идентификатор вкладки, если вкладка определена
+            </summary>
+        </member>
+        <member name="T:Resto.BackApi.Core.BackgroundTask.IBackgroundTaskContext">
+            <summary>
+            <para>Интерфейс контекста выполнения фоновой задачи.</para>
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.BackgroundTask.IBackgroundTaskContext.DisableUiCancellation">
+            <summary>
+            Команда запретить пользователю отменить операцию
+            (другими словами просто задизейблить кнопку "Отмена").
+            </summary>
+        </member>
+        <member name="P:Resto.BackApi.Core.BackgroundTask.IBackgroundTaskContext.IsCancellationRequested">
+            <summary>
+            Признак того, что пользователь запросил отмену фоновой задачи
+            </summary>
+        </member>
+        <member name="P:Resto.BackApi.Core.BackgroundTask.IBackgroundTaskContext.CloseTabAfterCancellation">
+            <summary>
+            Признак необходимости закрытия вкладки (если таковая определена) в случае отмены операции
+            </summary>
+        </member>
+        <member name="T:Resto.BackApi.Core.BaseMenuItem">
+            <summary>
+            Базовый класс элемента меню для навигационной панели.
+            </summary>
+        </member>
+        <member name="T:Resto.BackApi.Core.MenuGroup">
+            <summary>
+            Группа элементов меню для навигационной панели
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.MenuGroup.#ctor(System.String,Resto.BackApi.Core.BaseMenuItem[],System.String,System.Nullable{System.Drawing.Color})">
+            <summary>
+            Создать группу
+            </summary>
+            <param name="groupName">Заголовок</param>
+            <param name="menuItems">Элементы меню</param>
+            <param name="groupId">Идентификатор данной группы.</param>
+            <param name="defaultStartPageTileItemsColor">Цвет плиток стартовой страницы для данной группы по умолчанию.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="P:Resto.BackApi.Core.MenuGroup.Name">
+            <summary>
+            Заголовок группы
+            </summary>
+        </member>
+        <member name="P:Resto.BackApi.Core.MenuGroup.Items">
+            <summary>
+            Элементы меню в группе
+            </summary>
+        </member>
+        <member name="P:Resto.BackApi.Core.MenuGroup.DefaultStartPageTileItemsColor">
+            <summary>
+            Цвет плиток стартовой страницы для данной группы по умолчанию.
+            </summary>
+        </member>
+        <member name="P:Resto.BackApi.Core.MenuGroup.Id">
+            <summary>
+            Идентификатор группы (используется для стартовой страницы).
+            </summary>
+        </member>
+        <member name="P:Resto.BackApi.Core.MenuGroup.Icon">
+            <summary>
+            Пиктограмма группы меню.
+            </summary>
+        </member>
+        <member name="T:Resto.BackApi.Core.LinkClickDelegate">
+            <summary>
+            Вызов пункта меню
+            </summary>
+        </member>
+        <member name="T:Resto.BackApi.Core.MenuItem">
+            <summary>
+            Элемент меню для навигационной панели. При нажатии отображает вкладку <see cref="!:BaseTabPage"/>
+            или вызывает делегат.
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.MenuItem.#ctor(Resto.BackApi.Core.ITabPage,System.String)">
+            <summary>
+            Создать элемент меню для навигационной панели
+            </summary>
+            <param name="tabPage">Вкладка, отображаемая при нажатии</param>
+            <param name="qualifyingId">
+            Уточняющая часть id (будет использована для формирования <see cref="P:Resto.BackApi.Core.MenuItem.Id"/> вместо имени метода/свойства).
+            </param>
+        </member>
+        <member name="M:Resto.BackApi.Core.MenuItem.#ctor(System.String,System.Delegate,System.String)">
+            <summary>
+            Создать элемент меню для навигационной панели
+            </summary>
+            <param name="itemName">Заголовок</param>
+            <param name="action">Действие при нажатии</param>
+            <param name="qualifyingId">
+            Уточняющая часть id (будет использована для формирования <see cref="P:Resto.BackApi.Core.MenuItem.Id"/> вместо имени метода/свойства).
+            </param>
+        </member>
+        <member name="M:Resto.BackApi.Core.MenuItem.#ctor(System.String,Resto.BackApi.Core.MenuItem,System.String)">
+            <summary>
+            Создать элемент меню для навигационной панели
+            </summary>
+            <param name="itemName">Заголовок</param>
+            <param name="nestedMenuItem">"Вложенный" (эффективный) пункт меню.</param>
+            <param name="qualifyingId">
+            Уточняющая часть id (будет использована для формирования <see cref="P:Resto.BackApi.Core.MenuItem.Id"/> вместо имени метода/свойства).
+            </param>
+        </member>
+        <member name="M:Resto.BackApi.Core.MenuItem.SetId(System.String)">
+            <summary>
+            <para>Проставляет идентификатор пункта меню по умолчанию.</para>
+            <para>Идентификатор формируется как имя класса + имя свойства, в котором определен данный пункт меню.</para>
+            </summary>
+        </member>
+        <member name="P:Resto.BackApi.Core.MenuItem.Name">
+            <summary>
+            Заголовок элемента меню
+            </summary>
+        </member>
+        <member name="P:Resto.BackApi.Core.MenuItem.Tag">
+            <summary>
+            Тег элемента меню. Содержит вкладку <see cref="!:BaseTabPage"/> или делегат, вызываемые
+            при нажатии, либо вложенный (актуальный) пункт меню.
+            </summary>
+        </member>
+        <member name="P:Resto.BackApi.Core.MenuItem.Id">
+            <summary>
+            Идентификатор пункта меню (для стартовой страницы).
+            </summary>
+        </member>
+        <member name="T:Resto.BackApi.Core.MenuSeparator">
+            <summary>
+            Разделитель в меню навигационной панели
+            </summary>
+        </member>
+        <member name="T:Resto.BackApi.Core.MenuSubGroupLabel">
+            <summary>
+            Заголовок подгруппы в меню навигационной панели
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.MenuSubGroupLabel.#ctor(System.String)">
+            <summary>
+            Создать заголовок подгруппы
+            </summary>
+            <param name="labelName">Заголовок</param>
+        </member>
+        <member name="P:Resto.BackApi.Core.MenuSubGroupLabel.Name">
+            <summary>
+            Заголовок подгруппы
+            </summary>
+        </member>
+        <member name="T:Resto.BackApi.Core.Departments.DepartmentEntityInfo">
+            <summary>
+            Краткая информация о подразделении.
+            </summary>
+        </member>
+        <member name="P:Resto.BackApi.Core.Departments.DepartmentEntityInfo.Id">
+            <summary>
+            Идентификатор.
+            </summary>
+        </member>
+        <member name="P:Resto.BackApi.Core.Departments.DepartmentEntityInfo.Name">
+            <summary>
+            Наименование.
+            </summary>
+        </member>
+        <member name="T:Resto.BackApi.Core.Departments.IMultiDepartmentsProvider">
+            <summary>
+            Интерфейс провайдера сведений о подразделениях и текущем режиме работы iikoOffice.
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.Departments.IMultiDepartmentsProvider.GetChainOrRmsDepartments">
+            <summary>
+            В Чейне возвращает доступные в текущей сессии торговые предприятия - те, которые
+            пользователь выбрал при входе в Чейн. Всегда является подмножеством
+            множества ТП, в которых пользователь является ответственным. Не может
+            быть пустым.
+            В РМС возвращает множество, содержащее единственный элемент - текущее ТП.
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.Departments.IMultiDepartmentsProvider.GetNotDeletedDepartments">
+            <summary>
+            Возвращает список активынх (неудалённых) подразделений.
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.Departments.IMultiDepartmentsProvider.GetWorkingDepartments">
+            <summary>
+            Возвращает множество торговых предприятий, по которым текущий пользователь может смотреть/изменять данные.
+            Пересечение двух множеств:
+            1) торговые предприятия, где ответственным является текущий пользователь
+            2) торговые предприятия, доступные в текущем режиме работы (РМС / Чейн)
+            </summary>
+        </member>
+        <member name="P:Resto.BackApi.Core.Departments.IMultiDepartmentsProvider.IsChain">
+            <summary>
+            <c>true</c>, если мы в iikoOffice Chain.
+            </summary>
+        </member>
+        <member name="P:Resto.BackApi.Core.Departments.IMultiDepartmentsProvider.IsRms">
+            <summary>
+            <c>true</c>, если мы в iikoOffice.
+            </summary>
+        </member>
+        <member name="P:Resto.BackApi.Core.Departments.IMultiDepartmentsProvider.IsChainSingleDepartmentMode">
+            <summary>
+            <c>true</c>, если пользователь осуществил вход в Chain в режиме одного ресторана.
+            </summary>
+        </member>
+        <member name="T:Resto.BackApi.Core.Departments.MultiDepartmentsProvider">
+            <summary>
+            Содержит синглтон <see cref="T:Resto.BackApi.Core.Departments.IMultiDepartmentsProvider"/>.
+            </summary>
+        </member>
+        <member name="T:Resto.BackApi.Core.ITabPage">
+            <summary>
+            Интерфейс вкладки приложения BackOffice.
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.ITabPage.CreateControl">
+            <summary>
+            Контрол для помешения на отдельный tab
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.ITabPage.GetTabPageName">
+            <summary>
+            Имя таба отображаемое на закладке
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.ITabPage.GetTabPageId">
+            <summary>
+            Уникальный Id данного контрола, чтобы нельзя было открыть второй раз.
+            Если это необходимо то можно, для того чтобы открыть несколько окон одного контрола назначайте им разный Id
+            Вызываеться два раза, до вызова GetControl() и после.
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.ITabPage.GetTabPageHelpId">
+            <summary>
+            Возвращает идентификатор топика из хэлпа.
+            </summary>
+            <returns>id</returns>
+        </member>
+        <member name="M:Resto.BackApi.Core.ITabPage.LoadData(System.Windows.Forms.UserControl)">
+            <summary>
+            Метод используется для пост-загрузки данных, после того как контрол уже был создан и отбразился.
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.ITabPage.Focused(System.Windows.Forms.UserControl,System.Boolean)">
+            <summary>
+            Вызывается при выборе таба
+            <paramref name="closing">Признак того, что по факту таб закрывают и его выбрали перед окончательным убийством</paramref>
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.ITabPage.LostFocus(System.Windows.Forms.UserControl)">
+            <summary>
+            Вызывается при потери фокуса у таба
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.ITabPage.Closed(System.Windows.Forms.UserControl)">
+            <summary>
+            Вызывается при закрытии таба.
+            если возврашает true то таб закрываеться если false то не закрывается.
+            </summary>
+            <param name="control">Контрол который был создан через метод <see cref="M:Resto.BackApi.Core.ITabPage.CreateControl"/></param>
+        </member>
+        <member name="P:Resto.BackApi.Core.ITabPage.TabBaseName">
+            <summary>
+            В настоящий момент то же, что <see cref="M:Resto.BackApi.Core.ITabPage.GetTabPageName"/>.
+            </summary>
+        </member>
+        <member name="P:Resto.BackApi.Core.ITabPage.TabHelpIndex">
+            <summary>
+            Индекс раздела помощи.
+            </summary>
+        </member>
+        <member name="T:Resto.BackApi.Core.LicenseServiceAccessor">
+            <summary>
+            Класс для доступа к функционалу занятия/освобождения слота лицензии на определенный модуль.
+            </summary>
+        </member>
+        <member name="P:Resto.BackApi.Core.LicenseServiceAccessor.CheckExistingConnectionOrGetNew">
+            <summary>
+            Занимает свободный слот.
+            </summary>
+        </member>
+        <member name="P:Resto.BackApi.Core.LicenseServiceAccessor.ReleaseLicenseConnection">
+            <summary>
+            Освобождает занятый слот.
+            </summary>
+        </member>
+        <member name="T:Resto.BackApi.Core.LogAccessor">
+            <summary>
+            Предоставляет доступ к функционалу логирования.
+            </summary>
+        </member>
+        <member name="T:Resto.BackApi.Core.PluginTabPageBase">
+            <summary>
+            Базовая реализация вкладки для плагинов.
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.PluginTabPageBase.CreateControl">
+            <summary>
+            Контрол для помешения на отдельный tab
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.PluginTabPageBase.GetTabPageName">
+            <summary>
+            Имя таба отображаемое на закладке
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.PluginTabPageBase.GetTabPageId">
+            <summary>
+            Уникальный Id данного контрола, чтобы нельзя было открыть второй раз.
+            Если это необходимо то можно, для того чтобы открыть несколько окон одного контрола назначайте им разный Id
+            Вызываеться два раза, до вызова GetControl() и после.
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.PluginTabPageBase.GetTabPageHelpId">
+            <summary>
+            Возвращает идентификатор топика из хэлпа.
+            </summary>
+            <returns>id</returns>
+        </member>
+        <member name="M:Resto.BackApi.Core.PluginTabPageBase.LoadData(System.Windows.Forms.UserControl)">
+            <summary>
+            Метод используется для пост-загрузки данных, после того как контрол уже был создан и отбразился.
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.PluginTabPageBase.Focused(System.Windows.Forms.UserControl,System.Boolean)">
+            <summary>
+            Вызывается при выборе таба
+            <paramref name="closing">Признак того, что по факту таб закрывают и его выбрали перед окончательным убийством</paramref>
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.PluginTabPageBase.LostFocus(System.Windows.Forms.UserControl)">
+            <summary>
+            Вызывается при потери фокуса у таба
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.PluginTabPageBase.Closed(System.Windows.Forms.UserControl)">
+            <summary>
+            Вызываеться при закрытии таба
+            если возврашает true то таб закрываеться если false то не закрываеться
+            </summary>
+            <param name="control">Контрол который был создан через метод <see cref="M:Resto.BackApi.Core.PluginTabPageBase.CreateControl"/></param>
+        </member>
+        <member name="T:Resto.BackApi.Core.Plugin.INavBarPlugin">
+            <summary>
+            Интерфейс плагина, интегрирующегося в навигационную панель BackOffice.
+            </summary>
+        </member>
+        <member name="T:Resto.BackApi.Core.Plugin.IPlugin">
+            <summary>
+            Интерфейс плагина. В конкретной системе используется при помощи адаптера, реализующего
+            интерфейс <see cref="T:Resto.BackApi.Core.Plugin.IPluginAdapter"/>.
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.Plugin.IPlugin.SetAdapter(Resto.BackApi.Core.Plugin.IPluginAdapter)">
+            <summary>
+            Установка адаптера для плагина
+            </summary>
+            <param name="adapter">Адаптер</param>
+        </member>
+        <member name="T:Resto.BackApi.Core.Plugin.IPluginAdapter">
+            <summary>
+            Интерфейс адаптера к плагину, реализуещему интерфейс <see cref="T:Resto.BackApi.Core.Plugin.IPlugin"/>. Используется
+            для адаптации плагина к конкретной системе.
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.Plugin.IPluginAdapter.IsSupportedPlugin(Resto.BackApi.Core.Plugin.IPlugin)">
+            <summary>
+            Проверка, поддерживает ли адаптер плагин
+            </summary>
+            <param name="plugin">Проверяемый плагин</param>
+        </member>
+        <member name="M:Resto.BackApi.Core.Plugin.IPluginAdapter.Activate(Resto.BackApi.Core.Plugin.IPlugin)">
+            <summary>
+            Активация плагина
+            </summary>
+            <param name="plugin">Активируемый плагин</param>
+        </member>
+        <member name="M:Resto.BackApi.Core.Plugin.IPluginAdapter.Deactivate">
+            <summary>
+            Дезактивация плагина
+            </summary>
+        </member>
+        <member name="T:Resto.BackApi.Core.RestApi.RestApiClient">
+            <summary>
+            Клиент серверного REST API.
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.RestApi.RestApiClient.#ctor">
+            <summary>
+            Создает новый объект <see cref="T:Resto.BackApi.Core.RestApi.RestApiClient"/> с параметрами текущего подключения к серверу.
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.RestApi.RestApiClient.Login">
+            <summary>
+            Осуществляет аутентификацию, по окончании которой сохраняет в свойстве <see cref="P:Resto.BackApi.Core.RestApi.RestApiClient.AuthKey"/> возвращенный сервером токен.
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.RestApi.RestApiClient.Logout">
+            <summary>
+            Завершает сеанс работы, ассоциированный с токеном <see cref="P:Resto.BackApi.Core.RestApi.RestApiClient.AuthKey"/>.
+            </summary>
+        </member>
+        <member name="M:Resto.BackApi.Core.RestApi.RestApiClient.PrepareRequest(System.String,System.String[])">
+            <summary>
+            Подготавливает запрос для отправки на сервер.
+            </summary>
+            <param name="operationPath">Часть URI - "путь" к желаемой операции веб-службы.</param>
+            <param name="queryParams">Параметры запроса.</param>
+            <returns>Подготвленный объект запроса с включенным в запрос токеном аутентификации.</returns>
+        </member>
+        <member name="M:Resto.BackApi.Core.RestApi.RestApiClient.GetResponse(System.Func{System.Net.WebRequest},System.Int32)">
+            <summary>
+            Выполняет запрос к серверу.
+            </summary>
+            <param name="webRequestFunc">Метод-фабрика запросов.</param>
+            <param name="attemptsLeft">
+            Количество остающихся попыток переотправки запроса. 
+            Если равно 0, то осуществляется строго одна попытка отправки запроса.</param>
+            <returns>Ответ веб-сервера.</returns>
+        </member>
+        <member name="M:Resto.BackApi.Core.RestApi.RestApiClient.Combine(System.String[])">
+            <summary>
+            Склеивает части URI.
+            </summary>
+        </member>
+        <member name="P:Resto.BackApi.Core.RestApi.RestApiClient.AuthKey">
+            <summary>
+            Токен.
+            </summary>
+        </member>
+        <member name="P:Resto.BackApi.Core.RestApi.RestApiClient.CurrentSessionAuthData">
+            <summary>
+            Параметры текущего подключения к серверу.
+            </summary>
+        </member>
+        <member name="T:Resto.BackApi.Core.RestApi.RestApiClient.AuthData">
+            <summary>
+            Аутентификационные данные сессии взаимодействия с сервером.
+            </summary>
+        </member>
+        <member name="P:Resto.BackApi.Core.RestApi.RestApiClient.AuthData.ServerUrl">
+            <summary>
+            Адрес сервера.
+            </summary>
+        </member>
+        <member name="P:Resto.BackApi.Core.RestApi.RestApiClient.AuthData.Login">
+            <summary>
+            Логин.
+            </summary>
+        </member>
+        <member name="P:Resto.BackApi.Core.RestApi.RestApiClient.AuthData.PasswordHash">
+            <summary>
+            Хэш пароля.
+            </summary>
+        </member>
+    </members>
+</doc>

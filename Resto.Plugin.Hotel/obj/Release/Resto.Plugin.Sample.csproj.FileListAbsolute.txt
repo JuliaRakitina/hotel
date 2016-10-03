@@ -1,0 +1,16 @@
+D:\develop\rms6\dev\BackOffice\BackOffice\bin\Release\Plugins\Resto.Plugin.Sample.dll
+D:\develop\rms6\dev\BackOffice\BackOffice\bin\Release\Plugins\Resto.Plugin.Sample.pdb
+D:\develop\rms6\dev\BackOffice\Resto.Plugin.Sample\obj\Release\Resto.Plugin.Sample.SamplePluginUserControl.resources
+D:\develop\rms6\dev\BackOffice\Resto.Plugin.Sample\obj\Release\Resto.Plugin.Sample.csproj.GenerateResource.Cache
+D:\develop\rms6\dev\BackOffice\Resto.Plugin.Sample\obj\Release\Resto.Plugin.Sample.dll
+D:\develop\rms6\dev\BackOffice\Resto.Plugin.Sample\obj\Release\Resto.Plugin.Sample.pdb
+D:\develop\rms6\dev\BackOffice\Resto.Plugin.Sample\bin\Release\Resto.Plugin.Sample.dll
+D:\develop\rms6\dev\BackOffice\Resto.Plugin.Sample\bin\Release\Resto.Plugin.Sample.pdb
+D:\develop\rms6\dev\BackOffice\Resto.Plugin.Sample\obj\Release\Resto.Plugin.Sample.csprojResolveAssemblyReference.cache
+C:\Users\Julia\Desktop\iiko\Resto.Plugin.Sample.Sources\Resto.Plugin.Sample\bin\Release\Resto.Plugin.Sample.dll
+C:\Users\Julia\Desktop\iiko\Resto.Plugin.Sample.Sources\Resto.Plugin.Sample\bin\Release\Resto.Plugin.Sample.pdb
+C:\Users\Julia\Desktop\iiko\Resto.Plugin.Sample.Sources\Resto.Plugin.Sample\obj\Release\Resto.Plugin.Sample.csprojResolveAssemblyReference.cache
+C:\Users\Julia\Desktop\iiko\Resto.Plugin.Sample.Sources\Resto.Plugin.Sample\obj\Release\Resto.Plugin.Sample.SamplePluginUserControl.resources
+C:\Users\Julia\Desktop\iiko\Resto.Plugin.Sample.Sources\Resto.Plugin.Sample\obj\Release\Resto.Plugin.Sample.csproj.GenerateResource.Cache
+C:\Users\Julia\Desktop\iiko\Resto.Plugin.Sample.Sources\Resto.Plugin.Sample\obj\Release\Resto.Plugin.Sample.dll
+C:\Users\Julia\Desktop\iiko\Resto.Plugin.Sample.Sources\Resto.Plugin.Sample\obj\Release\Resto.Plugin.Sample.pdb

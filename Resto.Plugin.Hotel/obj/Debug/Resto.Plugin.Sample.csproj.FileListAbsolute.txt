@@ -1,0 +1,14 @@
+D:\develop\rms6\dev\BackOffice\BackOffice\bin\Debug\Plugins\Resto.Plugin.Sample.dll
+D:\develop\rms6\dev\BackOffice\BackOffice\bin\Debug\Plugins\Resto.Plugin.Sample.pdb
+D:\develop\rms6\dev\BackOffice\Resto.Plugin.Sample\obj\Debug\Resto.Plugin.Sample.SamplePluginUserControl.resources
+D:\develop\rms6\dev\BackOffice\Resto.Plugin.Sample\obj\Debug\Resto.Plugin.Sample.csproj.GenerateResource.Cache
+D:\develop\rms6\dev\BackOffice\Resto.Plugin.Sample\obj\Debug\Resto.Plugin.Sample.dll
+D:\develop\rms6\dev\BackOffice\Resto.Plugin.Sample\obj\Debug\Resto.Plugin.Sample.pdb
+D:\develop\rms6\dev\BackOffice\Resto.Plugin.Sample\obj\Debug\Resto.Plugin.Sample.csprojResolveAssemblyReference.cache
+C:\WORK\TestProject\Resto.Plugin.Sample.Sources\BackOffice\bin\Debug\Plugins\Resto.Plugin.Sample.dll
+C:\WORK\TestProject\Resto.Plugin.Sample.Sources\BackOffice\bin\Debug\Plugins\Resto.Plugin.Sample.pdb
+C:\WORK\TestProject\Resto.Plugin.Sample.Sources\Resto.Plugin.Sample\obj\Debug\Resto.Plugin.Sample.csprojResolveAssemblyReference.cache
+C:\WORK\TestProject\Resto.Plugin.Sample.Sources\Resto.Plugin.Sample\obj\Debug\Resto.Plugin.Sample.SamplePluginUserControl.resources
+C:\WORK\TestProject\Resto.Plugin.Sample.Sources\Resto.Plugin.Sample\obj\Debug\Resto.Plugin.Sample.csproj.GenerateResource.Cache
+C:\WORK\TestProject\Resto.Plugin.Sample.Sources\Resto.Plugin.Sample\obj\Debug\Resto.Plugin.Sample.dll
+C:\WORK\TestProject\Resto.Plugin.Sample.Sources\Resto.Plugin.Sample\obj\Debug\Resto.Plugin.Sample.pdb
