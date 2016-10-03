@@ -9,3 +9,4 @@ C:\Users\Julia\Desktop\5.0\SDK_4.4\Resto.Plugin.Hotel.Sources\Resto.Plugin.Hotel
 C:\Users\Julia\Desktop\5.0\SDK_4.4\Resto.Plugin.Hotel.Sources\Resto.Plugin.Hotel\bin\Release\Resto.Plugin.Hotel.dll.config
 C:\Users\Julia\Desktop\5.0\SDK_4.4\Resto.Plugin.Hotel.Sources\Resto.Plugin.Hotel\bin\Release\Resto.Framework.dll
 C:\Users\Julia\Desktop\5.0\SDK_4.4\Resto.Plugin.Hotel.Sources\Resto.Plugin.Hotel\obj\Release\Resto.Plugin.Hotel.Properties.Resources.resources
+C:\Users\Julia\Desktop\5.0\SDK_4.4\Resto.Plugin.Hotel.Sources\Resto.Plugin.Hotel\obj\Release\Resto.Plugin.Hotel.wndNewRsrv.resources

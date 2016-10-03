@@ -25,8 +25,9 @@ namespace Resto.Plugin.Hotel
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            var myUser = RestApiClient.CurrentSessionAuthData.Login;
-            this.lblTest.Text = myUser;
+
+            wndNewRsrv frm = new wndNewRsrv();
+            frm.Show();
         }
 
         private void getCurrentUserName()
