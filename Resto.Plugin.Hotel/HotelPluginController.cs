@@ -41,7 +41,6 @@ namespace Resto.Plugin.Hotel
             this.userControl = userControl;
             userControl.Controller = this;
             restApiClient = new RestApiClient();
-            repository = new HotelPluginRepository(restApiClient);
         }
 
         /// <summary>

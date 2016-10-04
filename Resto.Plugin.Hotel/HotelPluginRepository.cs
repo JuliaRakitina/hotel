@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Xml.Linq;
 using Resto.BackApi.Core.Departments;
-using Resto.BackApi.Core.RestApi;
+using Resto.BackApi.Core.RestApi; 
 
 namespace Resto.Plugin.Hotel
 {
@@ -17,7 +17,7 @@ namespace Resto.Plugin.Hotel
     {
         private readonly RestApiClient restApiClient;
 
-        public HotelPluginRepository(RestApiClient restApiClient)
+        public HotelPluginRepository(RestApiClient restApiClient, RestoDataSet restro)
         {
             this.restApiClient = restApiClient;
         }
@@ -66,5 +66,7 @@ namespace Resto.Plugin.Hotel
 
             return data;
         }
+
+
     }
 }
