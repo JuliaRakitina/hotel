@@ -17,7 +17,7 @@ namespace Resto.Plugin.Hotel
     {
         private readonly RestApiClient restApiClient;
 
-        public HotelPluginRepository(RestApiClient restApiClient, RestoDataSet restro)
+        public HotelPluginRepository(RestApiClient restApiClient)
         {
             this.restApiClient = restApiClient;
         }
@@ -66,7 +66,6 @@ namespace Resto.Plugin.Hotel
 
             return data;
         }
-
 
     }
 }
