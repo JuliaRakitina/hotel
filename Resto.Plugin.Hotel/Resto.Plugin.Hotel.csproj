@@ -116,6 +116,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="dirinfo.txt" />
+    <None Include="Resources\rewind32x32.png" />
+    <None Include="Resources\repeat32x32.png" />
+    <None Include="Resources\fast-forward32x32.png" />
+    <None Include="Resources\repeat24x24.png" />
+    <None Include="Resources\rewind24x24.png" />
+    <None Include="Resources\fast-forward24x24.png" />
+    <None Include="Resources\repeat.png" />
+    <None Include="Resources\rewind.png" />
+    <None Include="Resources\fast-forward.png" />
     <None Include="Resources\plus.png" />
     <None Include="Resources\cancel.png" />
     <None Include="Resources\info %281%29.png" />

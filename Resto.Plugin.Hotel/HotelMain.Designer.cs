@@ -42,15 +42,24 @@
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hotelMainPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTest = new System.Windows.Forms.Label();
-            this.btnCreate = new System.Windows.Forms.Button();
-            this.cmbRoomStatuses = new System.Windows.Forms.ComboBox();
             this.hotelRoomStatusesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.restoDataSet = new Resto.Plugin.Hotel.RestoDataSet();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.stsStrpLbl1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.hotelRoomStatusesTableAdapter = new Resto.Plugin.Hotel.RestoDataSetTableAdapters.HotelRoomStatusesTableAdapter();
             this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnClearSearch = new System.Windows.Forms.Button();
+            this.lblTimeFilter = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
+            this.dtpTo = new System.Windows.Forms.DateTimePicker();
+            this.lblFrom = new System.Windows.Forms.Label();
+            this.lblTo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtvMain)).BeginInit();
             this.hotelMainPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -165,47 +174,23 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.lblTest);
+            this.panel1.Controls.Add(this.lblTo);
+            this.panel1.Controls.Add(this.lblFrom);
+            this.panel1.Controls.Add(this.dtpTo);
+            this.panel1.Controls.Add(this.dtpFrom);
+            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.lblTimeFilter);
+            this.panel1.Controls.Add(this.btnClearSearch);
+            this.panel1.Controls.Add(this.btnNext);
+            this.panel1.Controls.Add(this.btnPrevious);
+            this.panel1.Controls.Add(this.lblSearch);
+            this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Controls.Add(this.btnCreate);
-            this.panel1.Controls.Add(this.cmbRoomStatuses);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1606, 118);
             this.panel1.TabIndex = 6;
-            // 
-            // lblTest
-            // 
-            this.lblTest.AutoSize = true;
-            this.lblTest.Location = new System.Drawing.Point(681, 40);
-            this.lblTest.Name = "lblTest";
-            this.lblTest.Size = new System.Drawing.Size(47, 25);
-            this.lblTest.TabIndex = 4;
-            this.lblTest.Text = "test";
-            // 
-            // btnCreate
-            // 
-            this.btnCreate.Image = global::Resto.Plugin.Hotel.Properties.Resources.plus_32x32;
-            this.btnCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreate.Location = new System.Drawing.Point(17, 11);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(249, 75);
-            this.btnCreate.TabIndex = 2;
-            this.btnCreate.Text = "New Reservation";
-            this.btnCreate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
-            // 
-            // cmbRoomStatuses
-            // 
-            this.cmbRoomStatuses.DataSource = this.hotelRoomStatusesBindingSource;
-            this.cmbRoomStatuses.DisplayMember = "room_status";
-            this.cmbRoomStatuses.FormattingEnabled = true;
-            this.cmbRoomStatuses.Location = new System.Drawing.Point(1081, 53);
-            this.cmbRoomStatuses.Name = "cmbRoomStatuses";
-            this.cmbRoomStatuses.Size = new System.Drawing.Size(275, 33);
-            this.cmbRoomStatuses.TabIndex = 3;
-            this.cmbRoomStatuses.ValueMember = "room_status_id";
             // 
             // hotelRoomStatusesBindingSource
             // 
@@ -243,6 +228,122 @@
             this.fillByToolStripButton.Name = "fillByToolStripButton";
             this.fillByToolStripButton.Size = new System.Drawing.Size(23, 23);
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(402, 15);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(238, 31);
+            this.txtSearch.TabIndex = 3;
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Location = new System.Drawing.Point(316, 21);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(80, 25);
+            this.lblSearch.TabIndex = 4;
+            this.lblSearch.Text = "Search";
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.Image = global::Resto.Plugin.Hotel.Properties.Resources.rewind32x32;
+            this.btnPrevious.Location = new System.Drawing.Point(666, 11);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(35, 35);
+            this.btnPrevious.TabIndex = 5;
+            this.btnPrevious.UseVisualStyleBackColor = true;
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.Image = global::Resto.Plugin.Hotel.Properties.Resources.plus_32x32;
+            this.btnCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCreate.Location = new System.Drawing.Point(17, 15);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(249, 87);
+            this.btnCreate.TabIndex = 2;
+            this.btnCreate.Text = "New Reservation";
+            this.btnCreate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.Image = global::Resto.Plugin.Hotel.Properties.Resources.fast_forward32x32;
+            this.btnNext.Location = new System.Drawing.Point(707, 11);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(35, 35);
+            this.btnNext.TabIndex = 6;
+            this.btnNext.UseVisualStyleBackColor = true;
+            // 
+            // btnClearSearch
+            // 
+            this.btnClearSearch.Image = global::Resto.Plugin.Hotel.Properties.Resources.repeat32x32;
+            this.btnClearSearch.Location = new System.Drawing.Point(748, 11);
+            this.btnClearSearch.Name = "btnClearSearch";
+            this.btnClearSearch.Size = new System.Drawing.Size(35, 35);
+            this.btnClearSearch.TabIndex = 7;
+            this.btnClearSearch.UseVisualStyleBackColor = true;
+            // 
+            // lblTimeFilter
+            // 
+            this.lblTimeFilter.AutoSize = true;
+            this.lblTimeFilter.Location = new System.Drawing.Point(281, 64);
+            this.lblTimeFilter.Name = "lblTimeFilter";
+            this.lblTimeFilter.Size = new System.Drawing.Size(115, 25);
+            this.lblTimeFilter.TabIndex = 8;
+            this.lblTimeFilter.Text = "Time Span";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Open Period",
+            "Today",
+            "Current week",
+            "Current month",
+            "Current year",
+            "Yesterday",
+            "Last week",
+            "Last month",
+            "Last year",
+            "Other..."});
+            this.comboBox1.Location = new System.Drawing.Point(403, 64);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(237, 33);
+            this.comboBox1.TabIndex = 9;
+            // 
+            // dtpFrom
+            // 
+            this.dtpFrom.Location = new System.Drawing.Point(740, 64);
+            this.dtpFrom.Name = "dtpFrom";
+            this.dtpFrom.Size = new System.Drawing.Size(200, 31);
+            this.dtpFrom.TabIndex = 10;
+            // 
+            // dtpTo
+            // 
+            this.dtpTo.Location = new System.Drawing.Point(1020, 64);
+            this.dtpTo.Name = "dtpTo";
+            this.dtpTo.Size = new System.Drawing.Size(200, 31);
+            this.dtpTo.TabIndex = 11;
+            // 
+            // lblFrom
+            // 
+            this.lblFrom.AutoSize = true;
+            this.lblFrom.Location = new System.Drawing.Point(661, 67);
+            this.lblFrom.Name = "lblFrom";
+            this.lblFrom.Size = new System.Drawing.Size(54, 25);
+            this.lblFrom.TabIndex = 12;
+            this.lblFrom.Text = "from";
+            // 
+            // lblTo
+            // 
+            this.lblTo.AutoSize = true;
+            this.lblTo.Location = new System.Drawing.Point(965, 67);
+            this.lblTo.Name = "lblTo";
+            this.lblTo.Size = new System.Drawing.Size(30, 25);
+            this.lblTo.TabIndex = 13;
+            this.lblTo.Text = "to";
+            // 
             // HotelMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -268,12 +369,10 @@
         private System.Windows.Forms.DataGridView dtvMain;
         private System.Windows.Forms.Panel hotelMainPanel;
         private System.Windows.Forms.Button btnCreate;
-        private System.Windows.Forms.ComboBox cmbRoomStatuses;
         private System.Windows.Forms.BindingSource hotelRoomStatusesBindingSource;
         private RestoDataSet restoDataSet;
         private RestoDataSetTableAdapters.HotelRoomStatusesTableAdapter hotelRoomStatusesTableAdapter;
         private System.Windows.Forms.ToolStripButton fillByToolStripButton;
-        private System.Windows.Forms.Label lblTest;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel stsStrpLbl1;
         private System.Windows.Forms.Panel panel1;
@@ -287,5 +386,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn room_type;
         private System.Windows.Forms.DataGridViewTextBoxColumn room_number;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnPrevious;
+        private System.Windows.Forms.Button btnClearSearch;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.DateTimePicker dtpTo;
+        private System.Windows.Forms.DateTimePicker dtpFrom;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lblTimeFilter;
+        private System.Windows.Forms.Label lblTo;
+        private System.Windows.Forms.Label lblFrom;
     }
 }
