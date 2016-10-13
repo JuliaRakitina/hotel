@@ -7,7 +7,7 @@ using Resto.BackApi.Core.Plugin;
 namespace Resto.Plugin.Hotel
 {
     /// <summary>
-    /// Представляет демо-плагин.
+    /// Представляет плагин для работы Отеля
     /// </summary>
     public class HotelPlugin : INavBarPlugin
     {
@@ -16,7 +16,8 @@ namespace Resto.Plugin.Hotel
         /// </summary>
         public MenuGroup MenuGroup
         {
-            get { return new MenuGroup("Отель", new BaseMenuItem[]
+            get {
+                return new MenuGroup("Отель", new BaseMenuItem[]
                 {
                     new MenuItem(tabPage: new HotelPluginTabPage(), qualifyingId: "HotelPlugin"), 
                 }, "HotelPluginGroup"); }

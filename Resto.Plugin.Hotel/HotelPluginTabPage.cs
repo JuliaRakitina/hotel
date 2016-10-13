@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Resto.BackApi.Core;
+using Resto.BackApi.Core.RestApi;
 
 namespace Resto.Plugin.Hotel
 {
@@ -19,9 +20,10 @@ namespace Resto.Plugin.Hotel
         /// В примере использован ModuleId фронта TS.
         /// </summary>
         private const int PluginModuleId = 101; // ModuleId.FrontOfficeTableService
+        private String currentUser = RestApiClient.CurrentSessionAuthData.Login;
 
         public HotelPluginTabPage()
-            : base("Отель")
+            : base("Главная")
         {
             
         }
@@ -32,14 +34,13 @@ namespace Resto.Plugin.Hotel
         /// <returns>Если возвращает <c>null</c>, то вкладка не открывается.</returns>
         public override UserControl CreateControl()
         {
-            if (!LicenseServiceAccessor.CheckExistingConnectionOrGetNew(PluginModuleId))
+            if (!LicenseServiceAccessor.CheckExistingConnectionOrGetNew(PluginModuleId)|| currentUser!="julia")
             {
                 return null;
             }
+
             var ctrl = new HotelMain();
-
             controller = new HotelPluginController(ctrl);
-
             return ctrl;
         }
 

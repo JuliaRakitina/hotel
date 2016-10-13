@@ -50,16 +50,16 @@
             this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
-            this.btnPrevious = new System.Windows.Forms.Button();
-            this.btnCreate = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.btnClearSearch = new System.Windows.Forms.Button();
             this.lblTimeFilter = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
             this.lblFrom = new System.Windows.Forms.Label();
             this.lblTo = new System.Windows.Forms.Label();
+            this.btnClearSearch = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtvMain)).BeginInit();
             this.hotelMainPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -244,46 +244,6 @@
             this.lblSearch.TabIndex = 4;
             this.lblSearch.Text = "Search";
             // 
-            // btnPrevious
-            // 
-            this.btnPrevious.Image = global::Resto.Plugin.Hotel.Properties.Resources.rewind32x32;
-            this.btnPrevious.Location = new System.Drawing.Point(666, 11);
-            this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(35, 35);
-            this.btnPrevious.TabIndex = 5;
-            this.btnPrevious.UseVisualStyleBackColor = true;
-            // 
-            // btnCreate
-            // 
-            this.btnCreate.Image = global::Resto.Plugin.Hotel.Properties.Resources.plus_32x32;
-            this.btnCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreate.Location = new System.Drawing.Point(17, 15);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(249, 87);
-            this.btnCreate.TabIndex = 2;
-            this.btnCreate.Text = "New Reservation";
-            this.btnCreate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
-            // 
-            // btnNext
-            // 
-            this.btnNext.Image = global::Resto.Plugin.Hotel.Properties.Resources.fast_forward32x32;
-            this.btnNext.Location = new System.Drawing.Point(707, 11);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(35, 35);
-            this.btnNext.TabIndex = 6;
-            this.btnNext.UseVisualStyleBackColor = true;
-            // 
-            // btnClearSearch
-            // 
-            this.btnClearSearch.Image = global::Resto.Plugin.Hotel.Properties.Resources.repeat32x32;
-            this.btnClearSearch.Location = new System.Drawing.Point(748, 11);
-            this.btnClearSearch.Name = "btnClearSearch";
-            this.btnClearSearch.Size = new System.Drawing.Size(35, 35);
-            this.btnClearSearch.TabIndex = 7;
-            this.btnClearSearch.UseVisualStyleBackColor = true;
-            // 
             // lblTimeFilter
             // 
             this.lblTimeFilter.AutoSize = true;
@@ -343,6 +303,56 @@
             this.lblTo.Size = new System.Drawing.Size(30, 25);
             this.lblTo.TabIndex = 13;
             this.lblTo.Text = "to";
+            // 
+            // btnClearSearch
+            // 
+            this.btnClearSearch.BackgroundImage = global::Resto.Plugin.Hotel.Properties.Resources.repeat32x32;
+            this.btnClearSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClearSearch.FlatAppearance.BorderSize = 0;
+            this.btnClearSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClearSearch.Location = new System.Drawing.Point(748, 11);
+            this.btnClearSearch.Name = "btnClearSearch";
+            this.btnClearSearch.Size = new System.Drawing.Size(32, 32);
+            this.btnClearSearch.TabIndex = 7;
+            this.btnClearSearch.UseVisualStyleBackColor = true;
+            // 
+            // btnNext
+            // 
+            this.btnNext.BackgroundImage = global::Resto.Plugin.Hotel.Properties.Resources.fast_forward32x32;
+            this.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Location = new System.Drawing.Point(707, 11);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(32, 32);
+            this.btnNext.TabIndex = 6;
+            this.btnNext.UseVisualStyleBackColor = true;
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.BackgroundImage = global::Resto.Plugin.Hotel.Properties.Resources.rewind32x32;
+            this.btnPrevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrevious.FlatAppearance.BorderSize = 0;
+            this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrevious.Location = new System.Drawing.Point(666, 11);
+            this.btnPrevious.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(32, 32);
+            this.btnPrevious.TabIndex = 5;
+            this.btnPrevious.UseVisualStyleBackColor = true;
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.Image = global::Resto.Plugin.Hotel.Properties.Resources.plus_32x32;
+            this.btnCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCreate.Location = new System.Drawing.Point(17, 15);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(249, 87);
+            this.btnCreate.TabIndex = 2;
+            this.btnCreate.Text = "New Reservation";
+            this.btnCreate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // HotelMain
             // 
