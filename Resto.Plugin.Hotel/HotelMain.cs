@@ -84,5 +84,14 @@ namespace Resto.Plugin.Hotel
             }
 
         }
+
+        private void cmbFilter_Click(object sender, EventArgs e)
+        {
+            ComboBox cmbSender = (ComboBox)sender;
+            Point ptLowerLeft = new Point(0, cmbSender.Height);
+            ptLowerLeft = cmbSender.PointToScreen(ptLowerLeft);
+            cntMenu.Width = cmbSender.Width;
+            cntMenu.Show(ptLowerLeft);
+        }
     }
 }

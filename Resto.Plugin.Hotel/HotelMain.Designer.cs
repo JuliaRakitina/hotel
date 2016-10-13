@@ -60,12 +60,23 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
+            this.cmbFilter = new System.Windows.Forms.ComboBox();
+            this.cntMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.optSelectAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.optClearAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.optReserved = new System.Windows.Forms.ToolStripMenuItem();
+            this.optCheckedIn = new System.Windows.Forms.ToolStripMenuItem();
+            this.optOcupated = new System.Windows.Forms.ToolStripMenuItem();
+            this.optCheckedOut = new System.Windows.Forms.ToolStripMenuItem();
+            this.optCancelled = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dtvMain)).BeginInit();
             this.hotelMainPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hotelRoomStatusesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.restoDataSet)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            this.cntMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtvMain
@@ -174,6 +185,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cmbFilter);
             this.panel1.Controls.Add(this.lblTo);
             this.panel1.Controls.Add(this.lblFrom);
             this.panel1.Controls.Add(this.dtpTo);
@@ -267,7 +279,7 @@
             "Last month",
             "Last year",
             "Other..."});
-            this.comboBox1.Location = new System.Drawing.Point(403, 64);
+            this.comboBox1.Location = new System.Drawing.Point(402, 64);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(237, 33);
             this.comboBox1.TabIndex = 9;
@@ -310,7 +322,7 @@
             this.btnClearSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClearSearch.FlatAppearance.BorderSize = 0;
             this.btnClearSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearSearch.Location = new System.Drawing.Point(748, 11);
+            this.btnClearSearch.Location = new System.Drawing.Point(748, 15);
             this.btnClearSearch.Name = "btnClearSearch";
             this.btnClearSearch.Size = new System.Drawing.Size(32, 32);
             this.btnClearSearch.TabIndex = 7;
@@ -322,7 +334,7 @@
             this.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNext.FlatAppearance.BorderSize = 0;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Location = new System.Drawing.Point(707, 11);
+            this.btnNext.Location = new System.Drawing.Point(707, 15);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(32, 32);
             this.btnNext.TabIndex = 6;
@@ -334,7 +346,7 @@
             this.btnPrevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPrevious.FlatAppearance.BorderSize = 0;
             this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrevious.Location = new System.Drawing.Point(666, 11);
+            this.btnPrevious.Location = new System.Drawing.Point(666, 15);
             this.btnPrevious.Margin = new System.Windows.Forms.Padding(0);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(32, 32);
@@ -354,6 +366,85 @@
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
+            // cmbFilter
+            // 
+            this.cmbFilter.ContextMenuStrip = this.cntMenu;
+            this.cmbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFilter.FormattingEnabled = true;
+            this.cmbFilter.Location = new System.Drawing.Point(818, 13);
+            this.cmbFilter.Name = "cmbFilter";
+            this.cmbFilter.Size = new System.Drawing.Size(737, 33);
+            this.cmbFilter.TabIndex = 14;
+            this.cmbFilter.Click += new System.EventHandler(this.cmbFilter_Click);
+            // 
+            // cntMenu
+            // 
+            this.cntMenu.AutoSize = false;
+            this.cntMenu.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.cntMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.optSelectAll,
+            this.optClearAll,
+            this.toolStripSeparator1,
+            this.optReserved,
+            this.optCheckedIn,
+            this.optOcupated,
+            this.optCheckedOut,
+            this.optCancelled});
+            this.cntMenu.Name = "cntMenu";
+            this.cntMenu.Size = new System.Drawing.Size(270, 320);
+            // 
+            // optSelectAll
+            // 
+            this.optSelectAll.Name = "optSelectAll";
+            this.optSelectAll.Size = new System.Drawing.Size(269, 38);
+            this.optSelectAll.Text = "Select All";
+            // 
+            // optClearAll
+            // 
+            this.optClearAll.Name = "optClearAll";
+            this.optClearAll.Size = new System.Drawing.Size(269, 38);
+            this.optClearAll.Text = "Clear All";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(266, 6);
+            // 
+            // optReserved
+            // 
+            this.optReserved.CheckOnClick = true;
+            this.optReserved.Name = "optReserved";
+            this.optReserved.Size = new System.Drawing.Size(269, 38);
+            this.optReserved.Text = "Reserved";
+            // 
+            // optCheckedIn
+            // 
+            this.optCheckedIn.CheckOnClick = true;
+            this.optCheckedIn.Name = "optCheckedIn";
+            this.optCheckedIn.Size = new System.Drawing.Size(269, 38);
+            this.optCheckedIn.Text = "Cecked In";
+            // 
+            // optOcupated
+            // 
+            this.optOcupated.CheckOnClick = true;
+            this.optOcupated.Name = "optOcupated";
+            this.optOcupated.Size = new System.Drawing.Size(269, 38);
+            this.optOcupated.Text = "Ocupated";
+            // 
+            // optCheckedOut
+            // 
+            this.optCheckedOut.CheckOnClick = true;
+            this.optCheckedOut.Name = "optCheckedOut";
+            this.optCheckedOut.Size = new System.Drawing.Size(269, 38);
+            this.optCheckedOut.Text = "Cheched Out";
+            // 
+            // optCancelled
+            // 
+            this.optCancelled.CheckOnClick = true;
+            this.optCancelled.Name = "optCancelled";
+            this.optCancelled.Size = new System.Drawing.Size(269, 38);
+            this.optCancelled.Text = "Cencelled";
+            // 
             // HotelMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -370,6 +461,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.restoDataSet)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.cntMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -407,5 +499,15 @@
         private System.Windows.Forms.Label lblTimeFilter;
         private System.Windows.Forms.Label lblTo;
         private System.Windows.Forms.Label lblFrom;
+        private System.Windows.Forms.ComboBox cmbFilter;
+        private System.Windows.Forms.ContextMenuStrip cntMenu;
+        private System.Windows.Forms.ToolStripMenuItem optSelectAll;
+        private System.Windows.Forms.ToolStripMenuItem optClearAll;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem optReserved;
+        private System.Windows.Forms.ToolStripMenuItem optCheckedIn;
+        private System.Windows.Forms.ToolStripMenuItem optOcupated;
+        private System.Windows.Forms.ToolStripMenuItem optCheckedOut;
+        private System.Windows.Forms.ToolStripMenuItem optCancelled;
     }
 }
