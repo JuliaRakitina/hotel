@@ -22,8 +22,7 @@ namespace Resto.Plugin.Hotel
         private const int PluginModuleId = 101; // ModuleId.FrontOfficeTableService
         private String currentUser = RestApiClient.CurrentSessionAuthData.Login;
 
-        public HotelPluginTabPage()
-            : base("Главная")
+        public HotelPluginTabPage(): base("Главная")
         {
             
         }
@@ -34,7 +33,7 @@ namespace Resto.Plugin.Hotel
         /// <returns>Если возвращает <c>null</c>, то вкладка не открывается.</returns>
         public override UserControl CreateControl()
         {
-            if (!LicenseServiceAccessor.CheckExistingConnectionOrGetNew(PluginModuleId)|| currentUser!="julia")
+            if (!LicenseServiceAccessor.CheckExistingConnectionOrGetNew(PluginModuleId)|| currentUser!="hostes")
             {
                 return null;
             }

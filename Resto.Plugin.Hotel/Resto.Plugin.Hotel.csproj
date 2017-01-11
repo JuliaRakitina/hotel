@@ -31,6 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="Resto.BackApi.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -42,8 +50,11 @@
       <HintPath>lib\Resto.Framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
@@ -57,6 +68,23 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HotelPluginStructureController.cs" />
+    <Compile Include="HotelPluginStructureTabPage.cs" />
+    <Compile Include="HotelRoomType.cs">
+      <DependentUpon>RoomType.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotelStructureMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HotelStructureMain.Designer.cs">
+      <DependentUpon>HotelStructureMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewFloor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewFloor.Designer.cs">
+      <DependentUpon>NewFloor.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewReservation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,8 +126,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RestoDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RoomType.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoomType.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoomType.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoomType.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoomType.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoomType.edmx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="HotelStructureMain.resx">
+      <DependentUpon>HotelStructureMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewFloor.resx">
+      <DependentUpon>NewFloor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewReservation.resx">
       <DependentUpon>NewReservation.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +165,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="dirinfo.txt" />
+    <Content Include="RoomType.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RoomType.edmx</DependentUpon>
+      <LastGenOutput>RoomType.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="RoomType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RoomType.edmx</DependentUpon>
+      <LastGenOutput>RoomType.cs</LastGenOutput>
+    </Content>
+    <None Include="packages.config" />
     <None Include="Resources\forward32x32.png" />
     <None Include="Resources\rewind32x32.png" />
     <None Include="Resources\repeat32x32.png" />
@@ -134,6 +194,13 @@
     <None Include="Resources\error.png" />
     <None Include="Resources\edit.png" />
     <None Include="Resources\edit_16x16.bmp" />
+    <EntityDeploy Include="RoomType.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RoomType.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="RoomType.edmx.diagram">
+      <DependentUpon>RoomType.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -152,6 +219,9 @@
     <None Include="RestoDataSet.xss">
       <DependentUpon>RestoDataSet.xsd</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

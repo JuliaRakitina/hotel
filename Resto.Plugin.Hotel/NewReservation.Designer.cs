@@ -32,6 +32,7 @@
             this.pnlGusetInfo = new System.Windows.Forms.Panel();
             this.grpbxGuestInfo = new System.Windows.Forms.GroupBox();
             this.txtIdNumber = new System.Windows.Forms.TextBox();
+            this.lblTest = new System.Windows.Forms.Label();
             this.cmbIdType = new System.Windows.Forms.ComboBox();
             this.lblIdNumber = new System.Windows.Forms.Label();
             this.lblIdType = new System.Windows.Forms.Label();
@@ -45,19 +46,20 @@
             this.lblGuestName = new System.Windows.Forms.Label();
             this.txtGuestName = new System.Windows.Forms.TextBox();
             this.grpRateInfo = new System.Windows.Forms.GroupBox();
-            this.lblCheckIn = new System.Windows.Forms.Label();
-            this.lblCheckout = new System.Windows.Forms.Label();
-            this.dtpCheckIn = new System.Windows.Forms.DateTimePicker();
-            this.dtpCheckOut = new System.Windows.Forms.DateTimePicker();
-            this.lblNigthStay = new System.Windows.Forms.Label();
-            this.lblTest = new System.Windows.Forms.Label();
-            this.txtNightCount = new System.Windows.Forms.TextBox();
-            this.lblAdults = new System.Windows.Forms.Label();
-            this.lblChildren = new System.Windows.Forms.Label();
-            this.lblRooms = new System.Windows.Forms.Label();
-            this.cmbRooms = new System.Windows.Forms.ComboBox();
-            this.cmbAdults = new System.Windows.Forms.ComboBox();
+            this.lblRoomType = new System.Windows.Forms.Label();
+            this.cmbRoomTypes = new System.Windows.Forms.ComboBox();
             this.cmbChildren = new System.Windows.Forms.ComboBox();
+            this.cmbAdults = new System.Windows.Forms.ComboBox();
+            this.cmbRooms = new System.Windows.Forms.ComboBox();
+            this.lblRooms = new System.Windows.Forms.Label();
+            this.lblChildren = new System.Windows.Forms.Label();
+            this.lblAdults = new System.Windows.Forms.Label();
+            this.txtNightCount = new System.Windows.Forms.TextBox();
+            this.lblNigthStay = new System.Windows.Forms.Label();
+            this.dtpCheckOut = new System.Windows.Forms.DateTimePicker();
+            this.dtpCheckIn = new System.Windows.Forms.DateTimePicker();
+            this.lblCheckout = new System.Windows.Forms.Label();
+            this.lblCheckIn = new System.Windows.Forms.Label();
             this.dgvRooms = new System.Windows.Forms.DataGridView();
             this.clmChoose = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.clmRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,8 +69,6 @@
             this.clmPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmPriceChild = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBook = new System.Windows.Forms.Button();
-            this.cmbRoomTypes = new System.Windows.Forms.ComboBox();
-            this.lblRoomType = new System.Windows.Forms.Label();
             this.pnlGusetInfo.SuspendLayout();
             this.grpbxGuestInfo.SuspendLayout();
             this.grpRateInfo.SuspendLayout();
@@ -114,6 +114,15 @@
             this.txtIdNumber.Name = "txtIdNumber";
             this.txtIdNumber.Size = new System.Drawing.Size(540, 31);
             this.txtIdNumber.TabIndex = 11;
+            // 
+            // lblTest
+            // 
+            this.lblTest.AutoSize = true;
+            this.lblTest.Location = new System.Drawing.Point(1539, 54);
+            this.lblTest.Name = "lblTest";
+            this.lblTest.Size = new System.Drawing.Size(70, 25);
+            this.lblTest.TabIndex = 6;
+            this.lblTest.Text = "label1";
             // 
             // cmbIdType
             // 
@@ -247,101 +256,27 @@
             this.grpRateInfo.TabStop = false;
             this.grpRateInfo.Text = "Rate Information";
             // 
-            // lblCheckIn
+            // lblRoomType
             // 
-            this.lblCheckIn.AutoSize = true;
-            this.lblCheckIn.Location = new System.Drawing.Point(33, 42);
-            this.lblCheckIn.Name = "lblCheckIn";
-            this.lblCheckIn.Size = new System.Drawing.Size(96, 25);
-            this.lblCheckIn.TabIndex = 0;
-            this.lblCheckIn.Text = "Check in";
+            this.lblRoomType.AutoSize = true;
+            this.lblRoomType.Location = new System.Drawing.Point(36, 159);
+            this.lblRoomType.Name = "lblRoomType";
+            this.lblRoomType.Size = new System.Drawing.Size(122, 25);
+            this.lblRoomType.TabIndex = 15;
+            this.lblRoomType.Text = "Room Type";
             // 
-            // lblCheckout
+            // cmbRoomTypes
             // 
-            this.lblCheckout.AutoSize = true;
-            this.lblCheckout.Location = new System.Drawing.Point(791, 42);
-            this.lblCheckout.Name = "lblCheckout";
-            this.lblCheckout.Size = new System.Drawing.Size(109, 25);
-            this.lblCheckout.TabIndex = 1;
-            this.lblCheckout.Text = "Check out";
+            this.cmbRoomTypes.FormattingEnabled = true;
+            this.cmbRoomTypes.Location = new System.Drawing.Point(173, 159);
+            this.cmbRoomTypes.Name = "cmbRoomTypes";
+            this.cmbRoomTypes.Size = new System.Drawing.Size(540, 33);
+            this.cmbRoomTypes.TabIndex = 14;
             // 
-            // dtpCheckIn
+            // cmbChildren
             // 
-            this.dtpCheckIn.Location = new System.Drawing.Point(173, 42);
-            this.dtpCheckIn.Name = "dtpCheckIn";
-            this.dtpCheckIn.Size = new System.Drawing.Size(540, 31);
-            this.dtpCheckIn.TabIndex = 2;
-            this.dtpCheckIn.ValueChanged += new System.EventHandler(this.dtpCheckIn_ValueChanged);
-            // 
-            // dtpCheckOut
-            // 
-            this.dtpCheckOut.Location = new System.Drawing.Point(920, 42);
-            this.dtpCheckOut.Name = "dtpCheckOut";
-            this.dtpCheckOut.Size = new System.Drawing.Size(540, 31);
-            this.dtpCheckOut.TabIndex = 3;
-            this.dtpCheckOut.ValueChanged += new System.EventHandler(this.dtpCheckOut_ValueChanged);
-            // 
-            // lblNigthStay
-            // 
-            this.lblNigthStay.AutoSize = true;
-            this.lblNigthStay.Location = new System.Drawing.Point(33, 104);
-            this.lblNigthStay.Name = "lblNigthStay";
-            this.lblNigthStay.Size = new System.Drawing.Size(125, 25);
-            this.lblNigthStay.TabIndex = 4;
-            this.lblNigthStay.Text = "Nigth Count";
-            // 
-            // lblTest
-            // 
-            this.lblTest.AutoSize = true;
-            this.lblTest.Location = new System.Drawing.Point(1539, 54);
-            this.lblTest.Name = "lblTest";
-            this.lblTest.Size = new System.Drawing.Size(70, 25);
-            this.lblTest.TabIndex = 6;
-            this.lblTest.Text = "label1";
-            // 
-            // txtNightCount
-            // 
-            this.txtNightCount.Location = new System.Drawing.Point(173, 104);
-            this.txtNightCount.MaxLength = 4;
-            this.txtNightCount.Name = "txtNightCount";
-            this.txtNightCount.Size = new System.Drawing.Size(88, 31);
-            this.txtNightCount.TabIndex = 7;
-            this.txtNightCount.Text = "1";
-            this.txtNightCount.TextChanged += new System.EventHandler(this.txtNightCount_TextChanged);
-            this.txtNightCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNightCount_KeyPress);
-            this.txtNightCount.Leave += new System.EventHandler(this.txtNightCount_Leave);
-            // 
-            // lblAdults
-            // 
-            this.lblAdults.AutoSize = true;
-            this.lblAdults.Location = new System.Drawing.Point(1073, 149);
-            this.lblAdults.Name = "lblAdults";
-            this.lblAdults.Size = new System.Drawing.Size(72, 25);
-            this.lblAdults.TabIndex = 8;
-            this.lblAdults.Text = "Adults";
-            // 
-            // lblChildren
-            // 
-            this.lblChildren.AutoSize = true;
-            this.lblChildren.Location = new System.Drawing.Point(1269, 149);
-            this.lblChildren.Name = "lblChildren";
-            this.lblChildren.Size = new System.Drawing.Size(92, 25);
-            this.lblChildren.TabIndex = 9;
-            this.lblChildren.Text = "Children";
-            // 
-            // lblRooms
-            // 
-            this.lblRooms.AutoSize = true;
-            this.lblRooms.Location = new System.Drawing.Point(797, 149);
-            this.lblRooms.Name = "lblRooms";
-            this.lblRooms.Size = new System.Drawing.Size(79, 25);
-            this.lblRooms.TabIndex = 10;
-            this.lblRooms.Text = "Rooms";
-            // 
-            // cmbRooms
-            // 
-            this.cmbRooms.FormattingEnabled = true;
-            this.cmbRooms.Items.AddRange(new object[] {
+            this.cmbChildren.FormattingEnabled = true;
+            this.cmbChildren.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -351,32 +286,11 @@
             "7",
             "8",
             "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30"});
-            this.cmbRooms.Location = new System.Drawing.Point(922, 145);
-            this.cmbRooms.Name = "cmbRooms";
-            this.cmbRooms.Size = new System.Drawing.Size(95, 33);
-            this.cmbRooms.TabIndex = 11;
-            this.cmbRooms.Text = "1";
+            "10"});
+            this.cmbChildren.Location = new System.Drawing.Point(1367, 145);
+            this.cmbChildren.Name = "cmbChildren";
+            this.cmbChildren.Size = new System.Drawing.Size(95, 33);
+            this.cmbChildren.TabIndex = 13;
             // 
             // cmbAdults
             // 
@@ -418,10 +332,10 @@
             this.cmbAdults.TabIndex = 12;
             this.cmbAdults.Text = "1";
             // 
-            // cmbChildren
+            // cmbRooms
             // 
-            this.cmbChildren.FormattingEnabled = true;
-            this.cmbChildren.Items.AddRange(new object[] {
+            this.cmbRooms.FormattingEnabled = true;
+            this.cmbRooms.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -431,11 +345,114 @@
             "7",
             "8",
             "9",
-            "10"});
-            this.cmbChildren.Location = new System.Drawing.Point(1367, 145);
-            this.cmbChildren.Name = "cmbChildren";
-            this.cmbChildren.Size = new System.Drawing.Size(95, 33);
-            this.cmbChildren.TabIndex = 13;
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30"});
+            this.cmbRooms.Location = new System.Drawing.Point(922, 145);
+            this.cmbRooms.Name = "cmbRooms";
+            this.cmbRooms.Size = new System.Drawing.Size(95, 33);
+            this.cmbRooms.TabIndex = 11;
+            this.cmbRooms.Text = "1";
+            // 
+            // lblRooms
+            // 
+            this.lblRooms.AutoSize = true;
+            this.lblRooms.Location = new System.Drawing.Point(797, 149);
+            this.lblRooms.Name = "lblRooms";
+            this.lblRooms.Size = new System.Drawing.Size(79, 25);
+            this.lblRooms.TabIndex = 10;
+            this.lblRooms.Text = "Rooms";
+            // 
+            // lblChildren
+            // 
+            this.lblChildren.AutoSize = true;
+            this.lblChildren.Location = new System.Drawing.Point(1269, 149);
+            this.lblChildren.Name = "lblChildren";
+            this.lblChildren.Size = new System.Drawing.Size(92, 25);
+            this.lblChildren.TabIndex = 9;
+            this.lblChildren.Text = "Children";
+            // 
+            // lblAdults
+            // 
+            this.lblAdults.AutoSize = true;
+            this.lblAdults.Location = new System.Drawing.Point(1073, 149);
+            this.lblAdults.Name = "lblAdults";
+            this.lblAdults.Size = new System.Drawing.Size(72, 25);
+            this.lblAdults.TabIndex = 8;
+            this.lblAdults.Text = "Adults";
+            // 
+            // txtNightCount
+            // 
+            this.txtNightCount.Location = new System.Drawing.Point(173, 104);
+            this.txtNightCount.MaxLength = 4;
+            this.txtNightCount.Name = "txtNightCount";
+            this.txtNightCount.Size = new System.Drawing.Size(88, 31);
+            this.txtNightCount.TabIndex = 7;
+            this.txtNightCount.Text = "1";
+            this.txtNightCount.TextChanged += new System.EventHandler(this.txtNightCount_TextChanged);
+            this.txtNightCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNightCount_KeyPress);
+            this.txtNightCount.Leave += new System.EventHandler(this.txtNightCount_Leave);
+            // 
+            // lblNigthStay
+            // 
+            this.lblNigthStay.AutoSize = true;
+            this.lblNigthStay.Location = new System.Drawing.Point(33, 104);
+            this.lblNigthStay.Name = "lblNigthStay";
+            this.lblNigthStay.Size = new System.Drawing.Size(125, 25);
+            this.lblNigthStay.TabIndex = 4;
+            this.lblNigthStay.Text = "Nigth Count";
+            // 
+            // dtpCheckOut
+            // 
+            this.dtpCheckOut.Location = new System.Drawing.Point(920, 42);
+            this.dtpCheckOut.Name = "dtpCheckOut";
+            this.dtpCheckOut.Size = new System.Drawing.Size(540, 31);
+            this.dtpCheckOut.TabIndex = 3;
+            this.dtpCheckOut.ValueChanged += new System.EventHandler(this.dtpCheckOut_ValueChanged);
+            // 
+            // dtpCheckIn
+            // 
+            this.dtpCheckIn.Location = new System.Drawing.Point(173, 42);
+            this.dtpCheckIn.Name = "dtpCheckIn";
+            this.dtpCheckIn.Size = new System.Drawing.Size(540, 31);
+            this.dtpCheckIn.TabIndex = 2;
+            this.dtpCheckIn.ValueChanged += new System.EventHandler(this.dtpCheckIn_ValueChanged);
+            // 
+            // lblCheckout
+            // 
+            this.lblCheckout.AutoSize = true;
+            this.lblCheckout.Location = new System.Drawing.Point(791, 42);
+            this.lblCheckout.Name = "lblCheckout";
+            this.lblCheckout.Size = new System.Drawing.Size(109, 25);
+            this.lblCheckout.TabIndex = 1;
+            this.lblCheckout.Text = "Check out";
+            // 
+            // lblCheckIn
+            // 
+            this.lblCheckIn.AutoSize = true;
+            this.lblCheckIn.Location = new System.Drawing.Point(33, 42);
+            this.lblCheckIn.Name = "lblCheckIn";
+            this.lblCheckIn.Size = new System.Drawing.Size(96, 25);
+            this.lblCheckIn.TabIndex = 0;
+            this.lblCheckIn.Text = "Check in";
             // 
             // dgvRooms
             // 
@@ -512,23 +529,6 @@
             this.btnBook.Text = "Book";
             this.btnBook.UseVisualStyleBackColor = true;
             // 
-            // cmbRoomTypes
-            // 
-            this.cmbRoomTypes.FormattingEnabled = true;
-            this.cmbRoomTypes.Location = new System.Drawing.Point(173, 159);
-            this.cmbRoomTypes.Name = "cmbRoomTypes";
-            this.cmbRoomTypes.Size = new System.Drawing.Size(540, 33);
-            this.cmbRoomTypes.TabIndex = 14;
-            // 
-            // lblRoomType
-            // 
-            this.lblRoomType.AutoSize = true;
-            this.lblRoomType.Location = new System.Drawing.Point(36, 159);
-            this.lblRoomType.Name = "lblRoomType";
-            this.lblRoomType.Size = new System.Drawing.Size(122, 25);
-            this.lblRoomType.TabIndex = 15;
-            this.lblRoomType.Text = "Room Type";
-            // 
             // wndNewRsrv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -540,7 +540,7 @@
             this.Controls.Add(this.pnlGusetInfo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "wndNewRsrv";
-            this.Text = "New Reservation";
+            this.Text = "F";
             this.pnlGusetInfo.ResumeLayout(false);
             this.grpbxGuestInfo.ResumeLayout(false);
             this.grpbxGuestInfo.PerformLayout();

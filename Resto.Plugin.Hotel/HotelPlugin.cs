@@ -19,7 +19,8 @@ namespace Resto.Plugin.Hotel
             get {
                 return new MenuGroup("Отель", new BaseMenuItem[]
                 {
-                    new MenuItem(tabPage: new HotelPluginTabPage(), qualifyingId: "HotelPlugin"), 
+                    new MenuItem(tabPage: new HotelPluginTabPage(), qualifyingId: "HotelPlugin"),
+                    new MenuItem(tabPage: new HotelPluginStructureTabPage(), qualifyingId: "HotelPluginProp"),
                 }, "HotelPluginGroup"); }
         }
 
