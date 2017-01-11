@@ -32,13 +32,13 @@ namespace Resto.Plugin.Hotel
         /// <returns>Если возвращает <c>null</c>, то вкладка не открывается.</returns>
         public override UserControl CreateControl()
         {
-            if (!LicenseServiceAccessor.CheckExistingConnectionOrGetNew(PluginModuleId) || currentUser != "hostes")
+            if (!LicenseServiceAccessor.CheckExistingConnectionOrGetNew(PluginModuleId))
             {
                 return null;
             }
 
             var ctrl = new HotelStructureMain();
-            controller = new HotelPluginStructureController(ctrl);
+    //        controller = new HotelPluginStructureController(ctrl);
             return ctrl;
         }
 
