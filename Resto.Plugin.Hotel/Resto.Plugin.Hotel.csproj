@@ -68,7 +68,6 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HotelPluginStructureController.cs" />
     <Compile Include="HotelPluginStructureTabPage.cs" />
     <Compile Include="HotelRoomType.cs">
       <DependentUpon>RoomType.tt</DependentUpon>

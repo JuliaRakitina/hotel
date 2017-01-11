@@ -24,14 +24,7 @@ namespace Resto.Plugin.Hotel
             InitializeComponent();
             OnLoadData();
         }
-
-        /// <summary>
-        /// Контроллер.
-        /// </summary>
-        public HotelPluginStructureController Controller { get; set; }
-
-
-
+        
         /// <summary>
         /// Загружает данные для плагина.
         /// </summary>

@@ -10,9 +10,6 @@ namespace Resto.Plugin.Hotel
 {
     class HotelPluginStructureTabPage : PluginTabPageBase
     {
-    
-        private HotelPluginStructureController controller;
-
         /// <summary>
         /// ModuleId плагина для лицензирования.
         /// В примере использован ModuleId фронта TS.
@@ -38,7 +35,6 @@ namespace Resto.Plugin.Hotel
             }
 
             var ctrl = new HotelStructureMain();
-    //        controller = new HotelPluginStructureController(ctrl);
             return ctrl;
         }
 
@@ -72,7 +68,6 @@ namespace Resto.Plugin.Hotel
         /// <returns><c>true</c>, если вкладку можно закрывать и <c>false</c> в противном случае.</returns>
         public override bool Closed(UserControl control)
         {
-            controller.OnClosed();
             LicenseServiceAccessor.ReleaseLicenseConnection(PluginModuleId);
 
             return base.Closed(control);
