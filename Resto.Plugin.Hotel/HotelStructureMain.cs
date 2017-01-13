@@ -74,7 +74,6 @@ namespace Resto.Plugin.Hotel
             newFloorUserController.Dock = DockStyle.Top;
             pnlMain.Controls.Add(newFloorUserController);
             newFloorUserController.FillFloorCombo(l);
-            //  newFloorUserControllers.Add(newFloorUserController);
 
         }
 

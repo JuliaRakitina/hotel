@@ -19,11 +19,7 @@ namespace Resto.Plugin.Hotel
             : base(ConnectionStringBuilder.Construct())
         {
         }
-
-        public RestoEntities(string connectionString) : base(connectionString)
-{
-        }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
