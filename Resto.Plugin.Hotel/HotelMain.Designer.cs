@@ -42,24 +42,6 @@
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hotelMainPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.hotelRoomStatusesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.restoDataSet = new Resto.Plugin.Hotel.RestoDataSet();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.stsStrpLbl1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.hotelRoomStatusesTableAdapter = new Resto.Plugin.Hotel.RestoDataSetTableAdapters.HotelRoomStatusesTableAdapter();
-            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.lblSearch = new System.Windows.Forms.Label();
-            this.lblTimeFilter = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
-            this.dtpTo = new System.Windows.Forms.DateTimePicker();
-            this.lblFrom = new System.Windows.Forms.Label();
-            this.lblTo = new System.Windows.Forms.Label();
-            this.btnClearSearch = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.btnPrevious = new System.Windows.Forms.Button();
-            this.btnCreate = new System.Windows.Forms.Button();
             this.cmbFilter = new System.Windows.Forms.ComboBox();
             this.cntMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.optSelectAll = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,13 +52,28 @@
             this.optOcupated = new System.Windows.Forms.ToolStripMenuItem();
             this.optCheckedOut = new System.Windows.Forms.ToolStripMenuItem();
             this.optCancelled = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblTo = new System.Windows.Forms.Label();
+            this.lblFrom = new System.Windows.Forms.Label();
+            this.dtpTo = new System.Windows.Forms.DateTimePicker();
+            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblTimeFilter = new System.Windows.Forms.Label();
+            this.btnClearSearch = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.stsStrpLbl1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.hotelRoomStatusesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtvMain)).BeginInit();
             this.hotelMainPanel.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelRoomStatusesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.restoDataSet)).BeginInit();
-            this.statusStrip1.SuspendLayout();
             this.cntMenu.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelRoomStatusesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dtvMain
@@ -204,66 +201,116 @@
             this.panel1.Size = new System.Drawing.Size(1606, 118);
             this.panel1.TabIndex = 6;
             // 
-            // hotelRoomStatusesBindingSource
+            // cmbFilter
             // 
-            this.hotelRoomStatusesBindingSource.DataMember = "HotelRoomStatuses";
-            this.hotelRoomStatusesBindingSource.DataSource = this.restoDataSet;
+            this.cmbFilter.ContextMenuStrip = this.cntMenu;
+            this.cmbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFilter.FormattingEnabled = true;
+            this.cmbFilter.Location = new System.Drawing.Point(818, 13);
+            this.cmbFilter.Name = "cmbFilter";
+            this.cmbFilter.Size = new System.Drawing.Size(737, 33);
+            this.cmbFilter.TabIndex = 14;
+            this.cmbFilter.Click += new System.EventHandler(this.cmbFilter_Click);
             // 
-            // restoDataSet
+            // cntMenu
             // 
-            this.restoDataSet.DataSetName = "RestoDataSet";
-            this.restoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.cntMenu.AutoSize = false;
+            this.cntMenu.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.cntMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.optSelectAll,
+            this.optClearAll,
+            this.toolStripSeparator1,
+            this.optReserved,
+            this.optCheckedIn,
+            this.optOcupated,
+            this.optCheckedOut,
+            this.optCancelled});
+            this.cntMenu.Name = "cntMenu";
+            this.cntMenu.Size = new System.Drawing.Size(270, 320);
             // 
-            // statusStrip1
+            // optSelectAll
             // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.stsStrpLbl1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 934);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1606, 37);
-            this.statusStrip1.TabIndex = 5;
-            this.statusStrip1.Text = "stsStrp";
+            this.optSelectAll.Name = "optSelectAll";
+            this.optSelectAll.Size = new System.Drawing.Size(256, 38);
+            this.optSelectAll.Text = "Select All";
             // 
-            // stsStrpLbl1
+            // optClearAll
             // 
-            this.stsStrpLbl1.Name = "stsStrpLbl1";
-            this.stsStrpLbl1.Size = new System.Drawing.Size(159, 32);
-            this.stsStrpLbl1.Text = "Current user: ";
+            this.optClearAll.Name = "optClearAll";
+            this.optClearAll.Size = new System.Drawing.Size(256, 38);
+            this.optClearAll.Text = "Clear All";
             // 
-            // hotelRoomStatusesTableAdapter
+            // toolStripSeparator1
             // 
-            this.hotelRoomStatusesTableAdapter.ClearBeforeFill = true;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(266, 6);
             // 
-            // fillByToolStripButton
+            // optReserved
             // 
-            this.fillByToolStripButton.Name = "fillByToolStripButton";
-            this.fillByToolStripButton.Size = new System.Drawing.Size(23, 23);
+            this.optReserved.CheckOnClick = true;
+            this.optReserved.Name = "optReserved";
+            this.optReserved.Size = new System.Drawing.Size(256, 38);
+            this.optReserved.Text = "Reserved";
             // 
-            // txtSearch
+            // optCheckedIn
             // 
-            this.txtSearch.Location = new System.Drawing.Point(402, 15);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(238, 31);
-            this.txtSearch.TabIndex = 3;
+            this.optCheckedIn.CheckOnClick = true;
+            this.optCheckedIn.Name = "optCheckedIn";
+            this.optCheckedIn.Size = new System.Drawing.Size(256, 38);
+            this.optCheckedIn.Text = "Cecked In";
             // 
-            // lblSearch
+            // optOcupated
             // 
-            this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new System.Drawing.Point(316, 21);
-            this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(80, 25);
-            this.lblSearch.TabIndex = 4;
-            this.lblSearch.Text = "Search";
+            this.optOcupated.CheckOnClick = true;
+            this.optOcupated.Name = "optOcupated";
+            this.optOcupated.Size = new System.Drawing.Size(256, 38);
+            this.optOcupated.Text = "Ocupated";
             // 
-            // lblTimeFilter
+            // optCheckedOut
             // 
-            this.lblTimeFilter.AutoSize = true;
-            this.lblTimeFilter.Location = new System.Drawing.Point(281, 64);
-            this.lblTimeFilter.Name = "lblTimeFilter";
-            this.lblTimeFilter.Size = new System.Drawing.Size(115, 25);
-            this.lblTimeFilter.TabIndex = 8;
-            this.lblTimeFilter.Text = "Time Span";
+            this.optCheckedOut.CheckOnClick = true;
+            this.optCheckedOut.Name = "optCheckedOut";
+            this.optCheckedOut.Size = new System.Drawing.Size(256, 38);
+            this.optCheckedOut.Text = "Cheched Out";
+            // 
+            // optCancelled
+            // 
+            this.optCancelled.CheckOnClick = true;
+            this.optCancelled.Name = "optCancelled";
+            this.optCancelled.Size = new System.Drawing.Size(256, 38);
+            this.optCancelled.Text = "Cencelled";
+            // 
+            // lblTo
+            // 
+            this.lblTo.AutoSize = true;
+            this.lblTo.Location = new System.Drawing.Point(965, 67);
+            this.lblTo.Name = "lblTo";
+            this.lblTo.Size = new System.Drawing.Size(30, 25);
+            this.lblTo.TabIndex = 13;
+            this.lblTo.Text = "to";
+            // 
+            // lblFrom
+            // 
+            this.lblFrom.AutoSize = true;
+            this.lblFrom.Location = new System.Drawing.Point(661, 67);
+            this.lblFrom.Name = "lblFrom";
+            this.lblFrom.Size = new System.Drawing.Size(54, 25);
+            this.lblFrom.TabIndex = 12;
+            this.lblFrom.Text = "from";
+            // 
+            // dtpTo
+            // 
+            this.dtpTo.Location = new System.Drawing.Point(1020, 64);
+            this.dtpTo.Name = "dtpTo";
+            this.dtpTo.Size = new System.Drawing.Size(200, 31);
+            this.dtpTo.TabIndex = 11;
+            // 
+            // dtpFrom
+            // 
+            this.dtpFrom.Location = new System.Drawing.Point(740, 64);
+            this.dtpFrom.Name = "dtpFrom";
+            this.dtpFrom.Size = new System.Drawing.Size(200, 31);
+            this.dtpFrom.TabIndex = 10;
             // 
             // comboBox1
             // 
@@ -284,37 +331,14 @@
             this.comboBox1.Size = new System.Drawing.Size(237, 33);
             this.comboBox1.TabIndex = 9;
             // 
-            // dtpFrom
+            // lblTimeFilter
             // 
-            this.dtpFrom.Location = new System.Drawing.Point(740, 64);
-            this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(200, 31);
-            this.dtpFrom.TabIndex = 10;
-            // 
-            // dtpTo
-            // 
-            this.dtpTo.Location = new System.Drawing.Point(1020, 64);
-            this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(200, 31);
-            this.dtpTo.TabIndex = 11;
-            // 
-            // lblFrom
-            // 
-            this.lblFrom.AutoSize = true;
-            this.lblFrom.Location = new System.Drawing.Point(661, 67);
-            this.lblFrom.Name = "lblFrom";
-            this.lblFrom.Size = new System.Drawing.Size(54, 25);
-            this.lblFrom.TabIndex = 12;
-            this.lblFrom.Text = "from";
-            // 
-            // lblTo
-            // 
-            this.lblTo.AutoSize = true;
-            this.lblTo.Location = new System.Drawing.Point(965, 67);
-            this.lblTo.Name = "lblTo";
-            this.lblTo.Size = new System.Drawing.Size(30, 25);
-            this.lblTo.TabIndex = 13;
-            this.lblTo.Text = "to";
+            this.lblTimeFilter.AutoSize = true;
+            this.lblTimeFilter.Location = new System.Drawing.Point(281, 64);
+            this.lblTimeFilter.Name = "lblTimeFilter";
+            this.lblTimeFilter.Size = new System.Drawing.Size(115, 25);
+            this.lblTimeFilter.TabIndex = 8;
+            this.lblTimeFilter.Text = "Time Span";
             // 
             // btnClearSearch
             // 
@@ -353,6 +377,22 @@
             this.btnPrevious.TabIndex = 5;
             this.btnPrevious.UseVisualStyleBackColor = true;
             // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Location = new System.Drawing.Point(316, 21);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(80, 25);
+            this.lblSearch.TabIndex = 4;
+            this.lblSearch.Text = "Search";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(402, 15);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(238, 31);
+            this.txtSearch.TabIndex = 3;
+            // 
             // btnCreate
             // 
             this.btnCreate.Image = global::Resto.Plugin.Hotel.Properties.Resources.plus_32x32;
@@ -366,84 +406,27 @@
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
-            // cmbFilter
+            // statusStrip1
             // 
-            this.cmbFilter.ContextMenuStrip = this.cntMenu;
-            this.cmbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbFilter.FormattingEnabled = true;
-            this.cmbFilter.Location = new System.Drawing.Point(818, 13);
-            this.cmbFilter.Name = "cmbFilter";
-            this.cmbFilter.Size = new System.Drawing.Size(737, 33);
-            this.cmbFilter.TabIndex = 14;
-            this.cmbFilter.Click += new System.EventHandler(this.cmbFilter_Click);
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stsStrpLbl1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 934);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1606, 37);
+            this.statusStrip1.TabIndex = 5;
+            this.statusStrip1.Text = "stsStrp";
             // 
-            // cntMenu
+            // stsStrpLbl1
             // 
-            this.cntMenu.AutoSize = false;
-            this.cntMenu.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.cntMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.optSelectAll,
-            this.optClearAll,
-            this.toolStripSeparator1,
-            this.optReserved,
-            this.optCheckedIn,
-            this.optOcupated,
-            this.optCheckedOut,
-            this.optCancelled});
-            this.cntMenu.Name = "cntMenu";
-            this.cntMenu.Size = new System.Drawing.Size(270, 320);
+            this.stsStrpLbl1.Name = "stsStrpLbl1";
+            this.stsStrpLbl1.Size = new System.Drawing.Size(159, 32);
+            this.stsStrpLbl1.Text = "Current user: ";
             // 
-            // optSelectAll
+            // fillByToolStripButton
             // 
-            this.optSelectAll.Name = "optSelectAll";
-            this.optSelectAll.Size = new System.Drawing.Size(269, 38);
-            this.optSelectAll.Text = "Select All";
-            // 
-            // optClearAll
-            // 
-            this.optClearAll.Name = "optClearAll";
-            this.optClearAll.Size = new System.Drawing.Size(269, 38);
-            this.optClearAll.Text = "Clear All";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(266, 6);
-            // 
-            // optReserved
-            // 
-            this.optReserved.CheckOnClick = true;
-            this.optReserved.Name = "optReserved";
-            this.optReserved.Size = new System.Drawing.Size(269, 38);
-            this.optReserved.Text = "Reserved";
-            // 
-            // optCheckedIn
-            // 
-            this.optCheckedIn.CheckOnClick = true;
-            this.optCheckedIn.Name = "optCheckedIn";
-            this.optCheckedIn.Size = new System.Drawing.Size(269, 38);
-            this.optCheckedIn.Text = "Cecked In";
-            // 
-            // optOcupated
-            // 
-            this.optOcupated.CheckOnClick = true;
-            this.optOcupated.Name = "optOcupated";
-            this.optOcupated.Size = new System.Drawing.Size(269, 38);
-            this.optOcupated.Text = "Ocupated";
-            // 
-            // optCheckedOut
-            // 
-            this.optCheckedOut.CheckOnClick = true;
-            this.optCheckedOut.Name = "optCheckedOut";
-            this.optCheckedOut.Size = new System.Drawing.Size(269, 38);
-            this.optCheckedOut.Text = "Cheched Out";
-            // 
-            // optCancelled
-            // 
-            this.optCancelled.CheckOnClick = true;
-            this.optCancelled.Name = "optCancelled";
-            this.optCancelled.Size = new System.Drawing.Size(269, 38);
-            this.optCancelled.Text = "Cencelled";
+            this.fillByToolStripButton.Name = "fillByToolStripButton";
+            this.fillByToolStripButton.Size = new System.Drawing.Size(23, 23);
             // 
             // HotelMain
             // 
@@ -457,11 +440,10 @@
             this.hotelMainPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelRoomStatusesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.restoDataSet)).EndInit();
+            this.cntMenu.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.cntMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.hotelRoomStatusesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -472,8 +454,6 @@
         private System.Windows.Forms.Panel hotelMainPanel;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.BindingSource hotelRoomStatusesBindingSource;
-        private RestoDataSet restoDataSet;
-        private RestoDataSetTableAdapters.HotelRoomStatusesTableAdapter hotelRoomStatusesTableAdapter;
         private System.Windows.Forms.ToolStripButton fillByToolStripButton;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel stsStrpLbl1;

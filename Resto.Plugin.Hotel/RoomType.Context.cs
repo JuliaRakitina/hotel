@@ -16,10 +16,14 @@ namespace Resto.Plugin.Hotel
     public partial class RestoEntities : DbContext
     {
         public RestoEntities()
-            : base("name=RestoEntities")
+            : base(ConnectionStringBuilder.Construct())
         {
         }
-    
+
+        public RestoEntities(string connectionString) : base(connectionString)
+{
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

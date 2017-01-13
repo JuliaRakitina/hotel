@@ -37,7 +37,9 @@ namespace Resto.Plugin.Hotel
         }
 
         public void FillRoomTypeCombo(List<HotelRoomType> rt) {
-
+            cmbRoomType.DataSource = rt;
+            cmbRoomType.ValueMember = "id";
+            cmbRoomType.DisplayMember = "name";
         }
     }
 }

@@ -10,6 +10,7 @@ using Resto.BackApi.Core.BackgroundTask;
 using Resto.BackApi.Core.BackgroundTask.Extensions;
 using Resto.BackApi.Core.RestApi;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Resto.Plugin.Hotel
 {
@@ -52,18 +53,12 @@ namespace Resto.Plugin.Hotel
         {
             newFloorUserController = new NewFloor();
 
-            //using (var context = new RestoEntities())
-            //{
-            //    // Query for all blogs with names starting with B 
-            //    var blogs = from b in context.Blogs
-            //                where b.Name.StartsWith("B")
-            //                select b;
+            string configvalue1 = "metadata=res://*/RoomType.csdl|res://*/RoomType.ssdl|res://*/RoomType.msl;provider=System.Data.SqlClient;provider connection string=data source=\"DESKTOP-3TVA44Q\\RESTO\";initial catalog=Resto;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
 
-            //    // Query for the Blog named ADO.NET Blog 
-            //    var blog = context.Blogs
-            //                    .Where(b => b.Name == "ADO.NET Blog")
-            //                    .FirstOrDefault();
-            //}
+            using (RestoEntities c = new RestoEntities())
+            {
+                newFloorUserController.FillRoomTypeCombo(c.HotelRoomType.ToList());
+            }
 
 
 

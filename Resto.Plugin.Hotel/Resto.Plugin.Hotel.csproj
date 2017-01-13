@@ -68,6 +68,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectionStringBuilder.cs" />
     <Compile Include="HotelPluginStructureTabPage.cs" />
     <Compile Include="HotelRoomType.cs">
       <DependentUpon>RoomType.tt</DependentUpon>
@@ -116,14 +117,6 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="RestoDataSet.cs">
-      <DependentUpon>RestoDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="RestoDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RestoDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="RoomType.Context.cs">
       <AutoGen>True</AutoGen>
@@ -206,17 +199,6 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="RestoDataSet.xsc">
-      <DependentUpon>RestoDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="RestoDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>RestoDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="RestoDataSet.xss">
-      <DependentUpon>RestoDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
