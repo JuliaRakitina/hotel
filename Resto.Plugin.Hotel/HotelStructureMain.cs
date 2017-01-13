@@ -62,13 +62,13 @@ namespace Resto.Plugin.Hotel
             {
                 l.Add(i);
             }
-            if (pnlMain.Controls.OfType<NewFloor>().Count() > 0)
-            {
-                foreach (var nf in pnlMain.Controls.OfType<NewFloor>())
-                {
-                    l.RemoveAll(x => x == nf.Floor);
-                }
-            }
+            //if (pnlMain.Controls.OfType<NewFloor>().Count() > 0)
+            //{
+            //    foreach (var nf in pnlMain.Controls.OfType<NewFloor>())
+            //    {
+            //        l.RemoveAll(x => x == nf.Floor);
+            //    }
+            //}
           
             newFloorUserController.Name = "new";
             newFloorUserController.Dock = DockStyle.Top;

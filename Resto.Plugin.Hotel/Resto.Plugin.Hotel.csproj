@@ -157,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="dirinfo.txt" />
+    <None Include="Resources\action_Cancel_16xLG.png" />
     <Content Include="RoomType.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>RoomType.edmx</DependentUpon>

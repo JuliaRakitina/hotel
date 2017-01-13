@@ -18,6 +18,8 @@ namespace Resto.Plugin.Hotel
         public RestoEntities()
             : base(ConnectionStringBuilder.Construct())
         {
+            //Disable initializer
+            Database.SetInitializer<RestoEntities>(null);
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

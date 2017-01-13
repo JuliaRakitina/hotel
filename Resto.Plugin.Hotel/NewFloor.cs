@@ -21,25 +21,56 @@ namespace Resto.Plugin.Hotel
             onLoad();
         }
 
-        public void onLoad() {
+        public void onLoad()
+        {
             Floor = 0;
         }
 
-        public void FillFloorCombo(List<Int32> ds) {
+        public void FillFloorCombo(List<Int32> ds)
+        {
             BindingSource bs = new BindingSource();
             bs.DataSource = ds;
             cmbFloorDynamic.DataSource = bs;
+            cmbFloorDynamic.SelectedItem = null;
         }
 
         private void cmbFloorDynamic_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Floor = (Int32)cmbFloorDynamic.SelectedItem;
+            if (cmbFloorDynamic.SelectedItem != null)
+            {
+                Floor = (Int32)cmbFloorDynamic.SelectedItem;
+            }
+
         }
 
-        public void FillRoomTypeCombo(List<HotelRoomType> rt) {
+        public void FillRoomTypeCombo(List<HotelRoomType> rt)
+        {
             cmbRoomType.DataSource = rt;
             cmbRoomType.ValueMember = "id";
             cmbRoomType.DisplayMember = "name";
+            cmbRoomType.SelectedItem = null;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            this.Parent.Controls.Remove(this);
+        }
+
+
+
+        private void txtPattern_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int i;
+            if (int.TryParse(e.KeyChar.ToString(), out i))
+            {
+                txtPattern.ForeColor = Color.Black;
+            }
+            else {
+                if (e.KeyChar.ToString() != "," && e.KeyChar.ToString() != "-" && e.KeyChar != (char)Keys.Back)
+                {
+                    e.Handled = true;
+                }
+            }
         }
     }
 }
