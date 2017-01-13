@@ -52,16 +52,10 @@ namespace Resto.Plugin.Hotel
         private void btnAddFloor_Click(object sender, EventArgs e)
         {
             newFloorUserController = new NewFloor();
-
-            string configvalue1 = "metadata=res://*/RoomType.csdl|res://*/RoomType.ssdl|res://*/RoomType.msl;provider=System.Data.SqlClient;provider connection string=data source=\"DESKTOP-3TVA44Q\\RESTO\";initial catalog=Resto;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
-
             using (RestoEntities c = new RestoEntities())
             {
                 newFloorUserController.FillRoomTypeCombo(c.HotelRoomType.ToList());
             }
-
-
-
 
             List<Int32> l = new List<int>();
             for (Int32 i = (Int32)nmbFloorCount.Value; i >= 1; i--)
