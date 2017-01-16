@@ -13,21 +13,21 @@ namespace Resto.Plugin.Hotel
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class RestoEntities : DbContext
+    public partial class RestoEntitiesRoom : DbContext
     {
-        public RestoEntities()
-            : base(ConnectionStringBuilder.Construct("RoomType"))
+        public RestoEntitiesRoom()
+          : base(ConnectionStringBuilder.Construct("HotelRoom"))
         {
             //Disable initializer
-            Database.SetInitializer<RestoEntities>(null);
+            Database.SetInitializer<RestoEntitiesRoom>(null);
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //  throw new UnintentionalCodeFirstException();
-            modelBuilder.Entity<HotelRoomType>().ToTable("HotelRoomType");
+            modelBuilder.Entity<HotelRoom>().ToTable("HotelRoom");
         }
-    
-        public virtual DbSet<HotelRoomType> HotelRoomType { get; set; }
+       
+
+        public virtual DbSet<HotelRoom> HotelRoom { get; set; }
     }
 }

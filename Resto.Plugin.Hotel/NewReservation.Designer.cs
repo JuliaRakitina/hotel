@@ -103,7 +103,7 @@
             this.grpbxGuestInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.grpbxGuestInfo.Location = new System.Drawing.Point(0, 0);
             this.grpbxGuestInfo.Name = "grpbxGuestInfo";
-            this.grpbxGuestInfo.Size = new System.Drawing.Size(1698, 238);
+            this.grpbxGuestInfo.Size = new System.Drawing.Size(1698, 246);
             this.grpbxGuestInfo.TabIndex = 0;
             this.grpbxGuestInfo.TabStop = false;
             this.grpbxGuestInfo.Text = "Guest Information";

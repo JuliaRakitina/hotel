@@ -9,19 +9,15 @@ namespace Resto.Plugin.Hotel
 {
     public class ConnectionStringBuilder
     {
-        public static string Construct()
+        public static string Construct(String model)
         {
-
-
             var newConnStringBuilder = new SqlConnectionStringBuilder(Properties.Settings.Default.RestoConnectionString);
 
             var entityConnectionBuilder = new EntityConnectionStringBuilder
             {
                 Provider = "System.Data.SqlClient",
                 ProviderConnectionString = newConnStringBuilder.ToString(),
-                Metadata = @"res://*/RoomType.csdl|
-                            res://*/RoomType.ssdl|
-                            res://*/RoomType.msl"
+                Metadata = @"res://*/"+model+ ".csdl|res://*/" + model + ".ssdl|res://*/" + model + ".msl"
             };
 
             return entityConnectionBuilder.ToString();

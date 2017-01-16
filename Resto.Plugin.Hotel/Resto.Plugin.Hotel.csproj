@@ -70,6 +70,24 @@
   <ItemGroup>
     <Compile Include="ConnectionStringBuilder.cs" />
     <Compile Include="HotelPluginStructureTabPage.cs" />
+    <Compile Include="HotelRoom.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelRoom.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotelRoom.cs">
+      <DependentUpon>HotelRoom.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotelRoom.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelRoom.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="HotelRoom1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelRoom.tt</DependentUpon>
+    </Compile>
     <Compile Include="HotelRoomType.cs">
       <DependentUpon>RoomType.tt</DependentUpon>
     </Compile>
@@ -157,7 +175,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="dirinfo.txt" />
+    <EntityDeploy Include="HotelRoom.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HotelRoom.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="HotelRoom.edmx.diagram">
+      <DependentUpon>HotelRoom.edmx</DependentUpon>
+    </None>
     <None Include="Resources\action_Cancel_16xLG.png" />
+    <Content Include="HotelRoom.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HotelRoom.edmx</DependentUpon>
+      <LastGenOutput>HotelRoom.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="HotelRoom.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HotelRoom.edmx</DependentUpon>
+      <LastGenOutput>HotelRoom1.cs</LastGenOutput>
+    </Content>
     <Content Include="RoomType.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>RoomType.edmx</DependentUpon>

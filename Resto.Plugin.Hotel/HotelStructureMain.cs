@@ -17,7 +17,6 @@ namespace Resto.Plugin.Hotel
     public partial class HotelStructureMain : UserControl
     {
 
-        private List<NewFloor> newFloorUserControllers;
         private NewFloor newFloorUserController;
 
         public HotelStructureMain()
@@ -46,6 +45,7 @@ namespace Resto.Plugin.Hotel
                     return;
                 }
             }
+            addFloor();
         }
 
 
@@ -75,6 +75,23 @@ namespace Resto.Plugin.Hotel
             pnlMain.Controls.Add(newFloorUserController);
             newFloorUserController.FillFloorCombo(l);
 
+        }
+
+        private void addFloor() {
+            
+
+            String t = "";
+            using (RestoEntitiesRoom c = new RestoEntitiesRoom())
+            {
+                var floors = c.HotelRoom.Select(m => m.floor).Distinct();
+                var roomTypes = c.HotelRoom.Select(n => n.room_type_id).Distinct();
+                var rooms = c.HotelRoom.ToList();
+                foreach (var floor in floors)
+                {
+                    t = t + ", " + floor.ToString();
+                }
+                MessageBox.Show(t);
+            }
         }
 
         private void nmbFloorCount_ValueChanged(object sender, EventArgs e)

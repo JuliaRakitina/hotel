@@ -30,20 +30,25 @@
         {
             this.lblFloor = new System.Windows.Forms.Label();
             this.nmbFloorCount = new System.Windows.Forms.NumericUpDown();
-            this.btnAddFloor = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.pnlTop = new System.Windows.Forms.Panel();
-            this.pnlBottom = new System.Windows.Forms.Panel();
-            this.pnlMain = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.cmbFloorFilter = new System.Windows.Forms.ComboBox();
-            this.cmbRoomTypeFilter = new System.Windows.Forms.ComboBox();
             this.lblFilter = new System.Windows.Forms.Label();
+            this.cmbRoomTypeFilter = new System.Windows.Forms.ComboBox();
+            this.cmbFloorFilter = new System.Windows.Forms.ComboBox();
             this.txt = new System.Windows.Forms.TextBox();
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.dgwRooms = new System.Windows.Forms.DataGridView();
+            this.cmbFloorAdd = new System.Windows.Forms.ComboBox();
+            this.cmbRoomType = new System.Windows.Forms.ComboBox();
+            this.txtPattern = new System.Windows.Forms.TextBox();
+            this.lblAdd = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nmbFloorCount)).BeginInit();
             this.pnlTop.SuspendLayout();
-            this.pnlBottom.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.pnlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwRooms)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFloor
@@ -78,125 +83,170 @@
             0});
             this.nmbFloorCount.ValueChanged += new System.EventHandler(this.nmbFloorCount_ValueChanged);
             // 
-            // btnAddFloor
-            // 
-            this.btnAddFloor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAddFloor.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnAddFloor.Location = new System.Drawing.Point(1634, 0);
-            this.btnAddFloor.Name = "btnAddFloor";
-            this.btnAddFloor.Size = new System.Drawing.Size(156, 100);
-            this.btnAddFloor.TabIndex = 6;
-            this.btnAddFloor.Text = "Add prorety";
-            this.btnAddFloor.UseVisualStyleBackColor = true;
-            this.btnAddFloor.Click += new System.EventHandler(this.btnAddFloor_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnSave.Location = new System.Drawing.Point(1634, 0);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(156, 94);
-            this.btnSave.TabIndex = 7;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // pnlTop
             // 
             this.pnlTop.Controls.Add(this.tableLayoutPanel1);
-            this.pnlTop.Controls.Add(this.btnAddFloor);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(1790, 100);
+            this.pnlTop.Size = new System.Drawing.Size(1790, 172);
             this.pnlTop.TabIndex = 9;
-            // 
-            // pnlBottom
-            // 
-            this.pnlBottom.Controls.Add(this.btnSave);
-            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(0, 714);
-            this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(1790, 94);
-            this.pnlBottom.TabIndex = 10;
-            // 
-            // pnlMain
-            // 
-            this.pnlMain.AutoScroll = true;
-            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(0, 100);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1790, 614);
-            this.pnlMain.TabIndex = 11;
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnCount = 6;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 400F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 600F));
-            this.tableLayoutPanel1.Controls.Add(this.lblFilter, 0, 1);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 606F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel1.Controls.Add(this.btnAdd, 5, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnClear, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblAdd, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtPattern, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cmbRoomType, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cmbFloorAdd, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.nmbFloorCount, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblFloor, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cmbRoomTypeFilter, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.cmbFloorFilter, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txt, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblFilter, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.cmbFloorFilter, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.cmbRoomTypeFilter, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txt, 3, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1306, 100);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1442, 172);
             this.tableLayoutPanel1.TabIndex = 7;
-            // 
-            // cmbFloorFilter
-            // 
-            this.cmbFloorFilter.FormattingEnabled = true;
-            this.cmbFloorFilter.Location = new System.Drawing.Point(153, 53);
-            this.cmbFloorFilter.Name = "cmbFloorFilter";
-            this.cmbFloorFilter.Size = new System.Drawing.Size(144, 33);
-            this.cmbFloorFilter.TabIndex = 2;
-            // 
-            // cmbRoomTypeFilter
-            // 
-            this.cmbRoomTypeFilter.FormattingEnabled = true;
-            this.cmbRoomTypeFilter.Location = new System.Drawing.Point(303, 53);
-            this.cmbRoomTypeFilter.Name = "cmbRoomTypeFilter";
-            this.cmbRoomTypeFilter.Size = new System.Drawing.Size(394, 33);
-            this.cmbRoomTypeFilter.TabIndex = 3;
             // 
             // lblFilter
             // 
             this.lblFilter.AutoSize = true;
-            this.lblFilter.Location = new System.Drawing.Point(3, 50);
+            this.lblFilter.Location = new System.Drawing.Point(3, 118);
             this.lblFilter.Name = "lblFilter";
             this.lblFilter.Size = new System.Drawing.Size(60, 25);
             this.lblFilter.TabIndex = 0;
             this.lblFilter.Text = "Filter";
             // 
+            // cmbRoomTypeFilter
+            // 
+            this.cmbRoomTypeFilter.FormattingEnabled = true;
+            this.cmbRoomTypeFilter.Location = new System.Drawing.Point(303, 121);
+            this.cmbRoomTypeFilter.Name = "cmbRoomTypeFilter";
+            this.cmbRoomTypeFilter.Size = new System.Drawing.Size(394, 33);
+            this.cmbRoomTypeFilter.TabIndex = 3;
+            // 
+            // cmbFloorFilter
+            // 
+            this.cmbFloorFilter.FormattingEnabled = true;
+            this.cmbFloorFilter.Location = new System.Drawing.Point(153, 121);
+            this.cmbFloorFilter.Name = "cmbFloorFilter";
+            this.cmbFloorFilter.Size = new System.Drawing.Size(144, 33);
+            this.cmbFloorFilter.TabIndex = 2;
+            // 
             // txt
             // 
-            this.txt.Location = new System.Drawing.Point(703, 53);
+            this.txt.Location = new System.Drawing.Point(703, 121);
             this.txt.Name = "txt";
             this.txt.Size = new System.Drawing.Size(600, 31);
             this.txt.TabIndex = 4;
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.AutoScroll = true;
+            this.pnlMain.Controls.Add(this.dgwRooms);
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(0, 172);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(1790, 636);
+            this.pnlMain.TabIndex = 11;
+            // 
+            // dgwRooms
+            // 
+            this.dgwRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwRooms.Location = new System.Drawing.Point(109, 62);
+            this.dgwRooms.Name = "dgwRooms";
+            this.dgwRooms.RowTemplate.Height = 33;
+            this.dgwRooms.Size = new System.Drawing.Size(876, 214);
+            this.dgwRooms.TabIndex = 0;
+            // 
+            // cmbFloorAdd
+            // 
+            this.cmbFloorAdd.FormattingEnabled = true;
+            this.cmbFloorAdd.Location = new System.Drawing.Point(153, 62);
+            this.cmbFloorAdd.Name = "cmbFloorAdd";
+            this.cmbFloorAdd.Size = new System.Drawing.Size(144, 33);
+            this.cmbFloorAdd.TabIndex = 7;
+            // 
+            // cmbRoomType
+            // 
+            this.cmbRoomType.FormattingEnabled = true;
+            this.cmbRoomType.Location = new System.Drawing.Point(303, 62);
+            this.cmbRoomType.Name = "cmbRoomType";
+            this.cmbRoomType.Size = new System.Drawing.Size(394, 33);
+            this.cmbRoomType.TabIndex = 3;
+            // 
+            // txtPattern
+            // 
+            this.txtPattern.Location = new System.Drawing.Point(703, 62);
+            this.txtPattern.Name = "txtPattern";
+            this.txtPattern.Size = new System.Drawing.Size(594, 31);
+            this.txtPattern.TabIndex = 5;
+            // 
+            // lblAdd
+            // 
+            this.lblAdd.AutoSize = true;
+            this.lblAdd.Location = new System.Drawing.Point(3, 59);
+            this.lblAdd.Name = "lblAdd";
+            this.lblAdd.Size = new System.Drawing.Size(115, 25);
+            this.lblAdd.TabIndex = 1;
+            this.lblAdd.Text = "Add rooms";
+            // 
+            // btnClear
+            // 
+            this.btnClear.AutoSize = true;
+            this.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClear.Image = global::Resto.Plugin.Hotel.Properties.Resources.action_Cancel_16xLG;
+            this.btnClear.Location = new System.Drawing.Point(1309, 62);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(30, 30);
+            this.btnClear.TabIndex = 8;
+            this.btnClear.TabStop = false;
+            this.btnClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnClear.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.AutoSize = true;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdd.Image = global::Resto.Plugin.Hotel.Properties.Resources.action_Cancel_16xLG;
+            this.btnAdd.Location = new System.Drawing.Point(1377, 62);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(30, 30);
+            this.btnAdd.TabIndex = 8;
+            this.btnAdd.TabStop = false;
+            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // HotelStructureMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlMain);
-            this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.pnlTop);
             this.Name = "HotelStructureMain";
             this.Size = new System.Drawing.Size(1790, 808);
             ((System.ComponentModel.ISupportInitialize)(this.nmbFloorCount)).EndInit();
             this.pnlTop.ResumeLayout(false);
-            this.pnlBottom.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.pnlMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgwRooms)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -205,15 +255,19 @@
 
         private System.Windows.Forms.Label lblFloor;
         private System.Windows.Forms.NumericUpDown nmbFloorCount;
-        private System.Windows.Forms.Button btnAddFloor;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Panel pnlTop;
-        private System.Windows.Forms.Panel pnlBottom;
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ComboBox cmbFloorFilter;
         private System.Windows.Forms.ComboBox cmbRoomTypeFilter;
         private System.Windows.Forms.Label lblFilter;
         private System.Windows.Forms.TextBox txt;
+        private System.Windows.Forms.DataGridView dgwRooms;
+        private System.Windows.Forms.ComboBox cmbFloorAdd;
+        private System.Windows.Forms.ComboBox cmbRoomType;
+        private System.Windows.Forms.Label lblAdd;
+        private System.Windows.Forms.TextBox txtPattern;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnClear;
     }
 }
