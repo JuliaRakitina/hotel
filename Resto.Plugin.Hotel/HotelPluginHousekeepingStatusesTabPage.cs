@@ -8,7 +8,7 @@ using Resto.BackApi.Core.RestApi;
 
 namespace Resto.Plugin.Hotel
 {
-    class HotelPluginStructureTabPage : PluginTabPageBase
+    class HotelPluginHousekeepingStatusesTabPage : PluginTabPageBase
     {
         /// <summary>
         /// ModuleId плагина для лицензирования.
@@ -18,7 +18,7 @@ namespace Resto.Plugin.Hotel
         private String currentUser = RestApiClient.CurrentSessionAuthData.Login;
 
 
-        public HotelPluginStructureTabPage(): base("Структура и состав")
+        public HotelPluginHousekeepingStatusesTabPage(): base("Статусы комнат")
         {
 
         }
@@ -34,18 +34,10 @@ namespace Resto.Plugin.Hotel
                 return null;
             }
 
-            var ctrl = new HotelStructureMain();
+            var ctrl = new HotelPluginHousekeepingStatuses();
             return ctrl;
         }
 
-        /// <summary>
-        /// Загружает данные.
-        /// </summary>
-        public override bool LoadData(UserControl control)
-        {
-            // Здесь всегда возвращается true, потому что 
-            return true;
-        }
 
         /// <summary>
         /// Возвращает идентификатор вкладки.
@@ -55,7 +47,7 @@ namespace Resto.Plugin.Hotel
         /// </summary>
         public override string GetTabPageId()
         {
-            return "HotelPluginProp";
+            return "HotelPluginHousekeepingStatuses";
         }
 
         /// <summary>

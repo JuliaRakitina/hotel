@@ -8,13 +8,8 @@ using Resto.BackApi.Core.RestApi;
 
 namespace Resto.Plugin.Hotel
 {
-    /// <summary>
-    /// Вкладка плагина.
-    /// </summary>
-    public class HotelPluginTabPage : PluginTabPageBase
+    class HotelPluginAgeGroupsTabPage : PluginTabPageBase
     {
-        private HotelPluginController controller;
-
         /// <summary>
         /// ModuleId плагина для лицензирования.
         /// В примере использован ModuleId фронта TS.
@@ -22,9 +17,10 @@ namespace Resto.Plugin.Hotel
         private const int PluginModuleId = 101; // ModuleId.FrontOfficeTableService
         private String currentUser = RestApiClient.CurrentSessionAuthData.Login;
 
-        public HotelPluginTabPage(): base("Навигатор Бронирований")
+
+        public HotelPluginAgeGroupsTabPage(): base("Возрастные группы")
         {
-            
+
         }
 
         /// <summary>
@@ -33,29 +29,15 @@ namespace Resto.Plugin.Hotel
         /// <returns>Если возвращает <c>null</c>, то вкладка не открывается.</returns>
         public override UserControl CreateControl()
         {
-            //if (!LicenseServiceAccessor.CheckExistingConnectionOrGetNew(PluginModuleId) || currentUser != "hostes")
-            //{
-            //    return null;
-            //}
             if (!LicenseServiceAccessor.CheckExistingConnectionOrGetNew(PluginModuleId))
             {
                 return null;
             }
-            var ctrl = new HotelMain();
-            controller = new HotelPluginController(ctrl);
+
+            var ctrl = new HotelPluginAgeGroups();
             return ctrl;
         }
 
-        /// <summary>
-        /// Загружает данные.
-        /// </summary>
-        public override bool LoadData(UserControl control)
-        {
-            controller.OnLoadData();
-
-            // Здесь всегда возвращается true, потому что 
-            return true;
-        }
 
         /// <summary>
         /// Возвращает идентификатор вкладки.
@@ -65,7 +47,7 @@ namespace Resto.Plugin.Hotel
         /// </summary>
         public override string GetTabPageId()
         {
-            return "HotelPlugin";
+            return "HotelPluginAgeGroups";
         }
 
         /// <summary>
@@ -78,7 +60,6 @@ namespace Resto.Plugin.Hotel
         /// <returns><c>true</c>, если вкладку можно закрывать и <c>false</c> в противном случае.</returns>
         public override bool Closed(UserControl control)
         {
-            controller.OnClosed();
             LicenseServiceAccessor.ReleaseLicenseConnection(PluginModuleId);
 
             return base.Closed(control);

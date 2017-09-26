@@ -73,6 +73,46 @@ namespace Resto.Plugin.Hotel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow_left_20 {
+            get {
+                object obj = ResourceManager.GetObject("arrow_left_20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_left_32 {
+            get {
+                object obj = ResourceManager.GetObject("arrow_left_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_right_20 {
+            get {
+                object obj = ResourceManager.GetObject("arrow_right_20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_right_32 {
+            get {
+                object obj = ResourceManager.GetObject("arrow_right_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cancel_16x16 {
             get {
                 object obj = ResourceManager.GetObject("cancel_16x16", resourceCulture);
@@ -86,6 +126,36 @@ namespace Resto.Plugin.Hotel.Properties {
         internal static System.Drawing.Bitmap cancel_24x24 {
             get {
                 object obj = ResourceManager.GetObject("cancel_24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap clear {
+            get {
+                object obj = ResourceManager.GetObject("clear", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cross_20 {
+            get {
+                object obj = ResourceManager.GetObject("cross_20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cross_32 {
+            get {
+                object obj = ResourceManager.GetObject("cross_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -236,6 +306,16 @@ namespace Resto.Plugin.Hotel.Properties {
         internal static System.Drawing.Bitmap rewind32x32 {
             get {
                 object obj = ResourceManager.GetObject("rewind32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tick {
+            get {
+                object obj = ResourceManager.GetObject("tick", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

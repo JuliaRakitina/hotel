@@ -31,6 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -52,6 +61,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -68,8 +78,27 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddRoomStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRoomStatus.Designer.cs">
+      <DependentUpon>AddRoomStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConnectionStringBuilder.cs" />
-    <Compile Include="HotelPluginStructureTabPage.cs" />
+    <Compile Include="HotelPluginAgeGroups.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HotelPluginAgeGroups.Designer.cs">
+      <DependentUpon>HotelPluginAgeGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotelPluginAgeGroupsTabPage.cs" />
+    <Compile Include="HotelPluginHousekeepingStatuses.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HotelPluginHousekeepingStatuses.Designer.cs">
+      <DependentUpon>HotelPluginHousekeepingStatuses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotelPluginHousekeepingStatusesTabPage.cs" />
     <Compile Include="HotelRoom.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -136,6 +165,14 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="RestoDataSet.cs">
+      <DependentUpon>RestoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RestoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RestoDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RoomType.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -153,6 +190,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddRoomStatus.resx">
+      <DependentUpon>AddRoomStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HotelPluginAgeGroups.resx">
+      <DependentUpon>HotelPluginAgeGroups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HotelPluginHousekeepingStatuses.resx">
+      <DependentUpon>HotelPluginHousekeepingStatuses.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HotelStructureMain.resx">
       <DependentUpon>HotelStructureMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +214,7 @@
     <EmbeddedResource Include="HotelPluginUserControl.resx">
       <DependentUpon>HotelPluginUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -193,6 +240,15 @@
       <DependentUpon>HotelRoom.edmx</DependentUpon>
       <LastGenOutput>HotelRoom1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\1484673246_edit-clear.png" />
+    <None Include="Resources\1484673390_Tick_Mark.png" />
+    <None Include="Resources\arrow_left_32.png" />
+    <None Include="Resources\arrow right_32.png" />
+    <None Include="Resources\cross_48.png" />
+    <None Include="Resources\arrow right_16.png" />
+    <None Include="Resources\arrow right_20.png" />
+    <None Include="Resources\arrow_left_20.png" />
+    <None Include="Resources\cross_20.png" />
     <Content Include="RoomType.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>RoomType.edmx</DependentUpon>
@@ -226,18 +282,32 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>RoomType.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="RestoDataSet.xsc">
+      <DependentUpon>RestoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RestoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RestoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RestoDataSet.xss">
+      <DependentUpon>RestoDataSet.xsd</DependentUpon>
+    </None>
     <None Include="RoomType.edmx.diagram">
       <DependentUpon>RoomType.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
